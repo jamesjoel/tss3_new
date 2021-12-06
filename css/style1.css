@@ -1,0 +1,23 @@
+/*
+    Background Properties
+        1. background-color
+        2. background-image
+        3. background-size
+        4. background-repeat : no-repeat/repeat-x/repeat-y
+        5. background-position :
+
+*/
+body{
+    background-color: #ACE012;
+}
+.box1{
+    height: 500px;
+    width: 700px;
+    background-color: #03974A;
+    font-size: 18px;
+    background-image: url("3.jpg");
+    background-repeat: no-repeat;
+    background-position: 20px 50px;
+    /* background-size: 100% 100%; */
+    /*              width   height */
+}
