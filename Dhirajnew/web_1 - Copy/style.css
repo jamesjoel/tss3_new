@@ -1,0 +1,29 @@
+.div1{
+    height: 40px;
+    width: 1222px;
+} 
+
+.div3{
+    height: 400px;
+    width: 800px;
+    background-image: url(1.jpg);
+    background-size: 100% 100%;
+}
+
+.div4{
+    font-size: 44px;
+}
+
+p, a{
+    font-size: 18px;
+}
+
+.ads{
+    height: 100px;
+    width:1100px;
+    background-color: cornflowerblue;
+}
+
+.formfill{
+    display: inline;
+}

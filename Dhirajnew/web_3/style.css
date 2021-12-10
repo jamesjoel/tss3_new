@@ -1,0 +1,261 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family:Helvetica;
+    background-color: #f1f1f1;
+}
+
+.wapper{
+    width: 1110px;
+    /* border: 1px solid black; */
+    margin: 0 auto;
+    padding: 0;
+}
+
+.top-header{
+    height: 90px;
+    width: 100%;
+    background-color: #F1F1F1;
+}
+
+.logo{
+    padding: 0;
+    margin: 0;
+    height: 90px;
+}
+
+.main-nav{
+    height: 50px;
+    width: 100%;
+    background-color: #E7CB46;
+}
+
+.main-nav-left{
+    height: 50px;
+    width: 600px;
+    padding: 0;
+}
+
+.main-nav ul{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li{
+    float: left;
+    padding: 0;
+    margin: 0 12px;
+    list-style-type:none;
+}
+
+.main-nav ul li a{
+    text-decoration: none;
+    color:black;
+    display: inline-block;
+    padding: 15px;
+    margin: 1px;
+}
+
+.main-nav ul li a:hover{
+    background-color: #faeb9a;
+    border-bottom: 5px solid #eed34b;
+    box-shadow: 0 10px 5px #e5e7cbe1 ;
+}
+
+.top-content{
+    height: auto;
+    min-height: 180px;
+}
+
+.top-content .wapper{
+    border-bottom: 3px dotted #d1d1d1;
+    height: 180px;
+}    
+
+.top-content p{
+    text-align: justify;
+}
+
+.top-content-bottom{
+    float: right;
+    height: 30px;
+    width: 100px;
+    background-color: brown;
+    border: 1px solid reb;
+}
+
+.top-content-bottom1{
+    float: right;
+    height: 30px;
+    width: 40px;
+    background-color: rgb(194, 189, 189);
+    border: 1px solid reb;
+}
+
+.top-content-bottom p{
+    padding: 0;
+    margin-left: 10px;
+    margin-top: 6px;
+    color: #F1F1F1;
+}
+
+.top-content-bottom1-inside{
+    padding:6px;
+    width: 40%;
+    margin: 0 auto;
+}
+
+
+
+.main-content h1{
+    color: #bd8c3d;
+}
+
+.main-content-part{
+    height: 240px;
+    width: 280px;
+    margin: 50px 10px;
+    margin-bottom: 80px;
+    float: left;
+}
+
+.image{
+    height: 100px;
+    width: 250px;
+    border: 10px solid #e7e7e7;
+    box-shadow: 0 0 4px rgb(209, 202, 202);
+}
+
+.main-content p{
+    color: #bd8c3d;
+}
+
+.para{
+    margin: 0;
+    padding: 0;
+    height: 100px;
+    width: 250px;
+    text-align: justify;
+}
+
+.main-content-bottom-both{
+    width: 140px;
+    float: right;
+    margin-left: 100px;
+}
+
+.main-content-bottom{
+    float: right;
+    height: 30px;
+    width: 100px;
+    background-color: brown;
+    border: 1px solid reb;
+}
+
+.main-content-bottom p{
+    padding: 0;
+    margin-left: 10px;
+    margin-top: 8px;
+    color: #F1F1F1;   
+}
+
+.main-content-bottom1{
+    float: right;
+    height: 30px;
+    width: 40px;
+    background-color: rgb(194, 189, 189);
+    border: 1px solid reb;
+}
+
+.main-content{
+    min-height: 900px;
+    height: auto;
+    width: 100%;
+    border-bottom: 2px solid #d1d1d1;
+    padding: 20px;
+    
+}
+
+.sub-main-content{
+    height: 350px;
+    width: 100%;
+    background-color: #E7CB46;
+    padding: 20px;
+}
+
+.sub-main-content-part{
+    height: 320px;
+    width: 200px;
+    float: left;
+    margin: 5px 20px;
+    /* background-color: aqua; */
+    /* margin: 10px 5px; */
+}
+.sub-main-content-part p{
+    line-height: 2.5;
+}
+
+.sub-main-content-part-inside{
+    height: 160px;
+    width: 230px;
+    float: left;
+}
+
+.sub-main-content-part-inside-down{
+    padding-top: 15px;
+    height: 160px;
+    width: 230px;
+    float: left;   
+}
+
+.main-footer{
+    height: 50px;
+    width: 100%;
+    background-color: #ceac16;
+
+}
+
+.main-footer .wapper{
+    height: 50px;
+    border-top: 2px solid #bd8c3d;
+}
+
+.main-footer-left{
+    width: 300px;
+    /* background-color: #000; */
+    height: 48px;
+    margin: 0%;
+    color: #F1F1F1;
+    padding: 0 8px ;
+    float: left;
+}
+
+.main-footer-left p{
+    margin: 3px;
+    padding: 0;
+}
+
+.main-footer-right ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.main-footer-right ul li{
+    float: left;
+}
+
+.main-footer-right ul li a{
+    text-decoration: none;
+    color: #F1F1F1;
+    display: inline-block;
+    margin: 5px 40px;
+}
+
+.main-footer-right{
+    float: left;
+    margin: 5px 80px;
+    margin-right: 130px;
+}
