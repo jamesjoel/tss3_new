@@ -92,7 +92,6 @@ body{
     margin: 40px 20px 40px 0;
     /* background-color: blue; */
     height: 800px;
-    border: 3px solid black;
 }
 .blog{
     width: 590px;
@@ -185,4 +184,39 @@ body{
     width: 100px;
     height: 150px;
     padding: 10px;
+}
+.bottom-line{
+    margin-top: 30px;
+   padding: 40px;
+}
+.right-content-box{
+    width: 250px;
+    height: 300px;
+    border: 1px solid black;
+}
+.right-content-box h3{
+    background-color: #999797;
+    color: black;
+    margin: 0;
+    padding: 5px;
+}
+.right-content-box-img-1{
+    float: left;
+    width: 103px;
+    height: 100px;
+    /* background-color: blue; */
+    margin: 10px;
+    border: 1px solid black;
+}
+.right-content-box p{
+    font-size: 13px;
+    text-align: center;
+}
+.right-content-box-img-2{
+    float: left;
+    width: 61px;
+    height: 100px;
+    /* background-color: blue; */
+    margin: 10px;
+    border: 1px solid black;
 }
