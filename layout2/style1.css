@@ -111,8 +111,8 @@ body{
     padding-bottom: 20px;
 }
 .product-box{
-    width: 185px;
-    height: 280px;
+    width: 150px;
+    height: 250px;
     float: left;
     background-color: #E8E5D5;
     margin: 10px;
@@ -120,8 +120,8 @@ body{
     
 }
 .product-box img{
-    width: 185px;
-    height: 185px;
+    width: 150px;
+    height: 100px;
     
 }
 .product-box h3{
