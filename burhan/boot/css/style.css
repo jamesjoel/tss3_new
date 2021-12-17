@@ -1,0 +1,20 @@
+.top-header{
+    /* height: 100px; */
+    /* background-color: red; */
+}
+.text-green{
+    color: #3DC4B6;
+}
+.bg-green{
+    background-color: #3DC4B6;
+}
+.navbar #menu ul li a{
+    color: #FFF;
+    font-weight: bold;
+}
+.bg-dark-green{
+    background-color: #2d897e;
+}
+.slider{
+    height: 250px;
+}
