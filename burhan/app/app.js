@@ -3,8 +3,8 @@ var express = require("express");
 const { send } = require("express/lib/response");
 // calling the express sample constractoer
 var app = express();
-app.get("/", ()=>{
-
+app.get("/", (req, res)=>{
+    res.send("<h1>Home Page</h1>");
 });
 
 app.get("/about", (req, res)=>{
@@ -13,7 +13,7 @@ app.get("/about", (req, res)=>{
 app.get("/contact", ()=>{
     res.send("<h1>Contact Page</h1>");
 });
-app.get("/Help", ()=>{
+app.get("/help", ()=>{
     res.send("<h1>Help page</h1>");
 });
 
