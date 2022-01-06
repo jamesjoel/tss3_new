@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.17.2",
+    "init": "^0.1.2"
+  },
+  "name": "tss3_new",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesjoel/tss3_new.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesjoel/tss3_new/issues"
+  },
+  "homepage": "https://github.com/jamesjoel/tss3_new#readme",
+  "description": ""
+}
