@@ -3,7 +3,7 @@ const routes = express.Router();
 
 const HomeCtrl = require("../controllers/HomeController");
 const AboutCtrl = require("../controllers/AboutController");
-const Helpctrl = require("../controllers/HelpController");
+const HelpCtrl = require("../controllers/HelpController");
 
 
 routes.use("/", HomeCtrl);
