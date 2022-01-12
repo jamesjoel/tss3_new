@@ -1,6 +1,14 @@
 var express = require("express");
 var app = express();
 
+
+app.use((req, res, next)=>{
+    console.log("Welcome");
+    next();
+})
+
+
+
 app.get("/", (req, res) => {
     // res.send("<h1>Home Page</h1>");
     res.sendFile(__dirname+"/home.html");
