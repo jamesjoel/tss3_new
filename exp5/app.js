@@ -25,7 +25,7 @@ app.get("/student", (req, res)=>{
             age : 25,
             city : "mumbai"
         },
-        {
+        {2
             name : "amar",
             age : 22,
             city : "pune"
