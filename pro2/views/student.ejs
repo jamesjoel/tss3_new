@@ -1,7 +1,7 @@
+<a href="/student/view" class="btn btn-info">List Student</a>
 <div class="row">
     <div class="col-md-6 offset-md-3">
         <br />
-        <a href="/student/view" class="btn btn-info">List Student</a>
         <h2>Student Page</h2>
         <br />
         <form action="/student/save" method="post">
@@ -12,6 +12,24 @@
         <div class="form-group">
             <label>Age</label>
             <input type="text" class="form-control" name="age"/>
+        </div>
+        <div class="form-group">
+            <label>Address</label>
+            <textarea class="form-control" name="address"></textarea>
+        </div>
+        <div class="form-group">
+            <label>City</label>
+            <select class="form-control" name="city">
+                <option>Select</option>
+                <option>Indore</option>
+                <option>Mumbai</option>
+                <option>Pune</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            Male : <input type="radio" name="gender" value="male"/>
+            Female : <input type="radio" name="gender" value="female"/>
         </div>
         <div class="form-group">
             <label>Fee</label>
