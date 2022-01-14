@@ -24,8 +24,38 @@ routes.get("/view", (req, res)=>{
     
 })
 
+routes.get("/profile/:a", (req, res)=>{
+    // console.log(req.params.a);
+    // return;
+    var id = req.params.a;
+    var objid = mongodb.ObjectId(id);
+    MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
+        var db = con.db("tss3");
+        db.collection("student").find({ _id : objid }).toArray((err, data)=>{
+            // console.log(data[0]);
+            var pageData = { pagename : "profile", title : "Profile", data : data[0]};
+            res.render("layout", pageData);
+        })
+    })
+})
+
+routes.get("/delete/:a", (req, res)=>{
+    var id = req.params.a;
+    var objid = mongodb.ObjectId(id);
+    MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
+        var db = con.db("tss3");
+        db.collection("student").deleteMany({ _id : objid}, ()=>{
+            res.redirect("/student/view");
+        })
+    })
+})
+
+
+
 
 routes.post("/save", (req, res)=>{
+    // console.log(req.body);
+    // return;
     MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
         if(err){
             console.log(err);
