@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <br />
+        <h2>Student Page</h2>
+        <!-- <%= data.name %> -->
+        <br />
+        <form action="/student/update/<%= data._id %>" method="post">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" value="<%= data.name %>" class="form-control" name="name" />
+        </div>
+        <div class="form-group">
+            <label>Age</label>
+            <input type="text" value="<%= data.age %>" class="form-control" name="age"/>
+        </div>
+        <div class="form-group">
+            <label>Address</label>
+            <textarea class="form-control" name="address"><%= data.address %></textarea>
+        </div>
+        <div class="form-group">
+            <label>City</label>
+            <select class="form-control" name="city">
+                <option>Select</option>
+                <option <% if(data.city=="Indore"){ %> selected <% } %> >Indore</option>
+                <option <% if(data.city=="Mumbai"){ %> selected <% } %> >Mumbai</option>
+                <option <% if(data.city=="Pune"){ %> selected <% } %> >Pune</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            Male : <input type="radio" <% if(data.gender=="male"){ %> checked <% } %> name="gender" value="male"/>
+            Female : <input type="radio" <% if(data.gender=="female"){ %> checked <% } %> name="gender" value="female"/>
+        </div>
+        <div class="form-group">
+            <label>Fee</label>
+            <input type="text" value="<%= data.fee %>" class="form-control" name="fee"/>
+        </div>
+        <br />
+        <input type="submit" value="Update" class="btn btn-primary" />
+        <a class="btn btn-danger" href="/student/view">Back</a>
+        </form>
+    </div>
+</div>
