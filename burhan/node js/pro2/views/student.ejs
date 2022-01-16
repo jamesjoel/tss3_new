@@ -1,8 +1,8 @@
+<a href="/student/view" class="btn btn-info">Student list</a>
 <div class="row">
     <div class="col-md-6 offset-md-3">
         <br />
-        <a href="/student/view" class="btn btn-info">Students Data</a>
-        <h1>The School student</h1>
+        <h1>STUDENT DATA</h1>
         <br />
         <form action="/student/save" method="post">
         <div class="form-group">
@@ -14,11 +14,29 @@
             <input type="text" class="form-control" name="age"/>
         </div>
         <div class="form-group">
+            <label>Address</label>
+            <textarea class="form-control" name="address"></textarea>
+        </div>
+        <div class="form-group">
+            <label>City</label>
+            <select class="form-control" name="city">
+                <option>Select</option>
+                <% data.forEach((x)=>{ %>
+                    <option><%= x.name %></option>
+                <% }) %>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            Male : <input type="radio" name="gender" value="male"/>
+            Female : <input type="radio" name="gender" value="female"/>
+        </div>
+        <div class="form-group">
             <label>Fees</label>
             <input type="text" class="form-control" name="fee"/>
         </div>
         <br />
-        <input type="submit" value="Submit" class="btn btn-primary" />
+        <input type="submit" value="submit" class="btn btn-primary" />
         </form>
     </div>
 </div>
