@@ -1,0 +1,3 @@
+{"_id":{"$oid":"61e536c06b3bb2f58aeb4a3b"},"name":"Rohit","age":"25","address":"sdfg sdfg sdg","city":"Indore","gender":"male","fee":"5000"}
+{"_id":{"$oid":"61e536cd6b3bb2f58aeb4a3c"},"name":"Jaya","age":"21","address":"sdfg sdfg sdfgfg","city":"Bhopal","gender":"female","fee":"8700"}
+{"_id":{"$oid":"61e5385a837920743a7b7faa"},"name":"Amar","age":"20","address":"sdfg sdfg sdg sdfg","city":"Thane","gender":"male","fee":"5400"}

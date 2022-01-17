@@ -21,9 +21,9 @@
             <label>City</label>
             <select class="form-control" name="city">
                 <option>Select</option>
-                <option <% if(data.city=="Indore"){ %> selected <% } %> >Indore</option>
-                <option <% if(data.city=="Mumbai"){ %> selected <% } %> >Mumbai</option>
-                <option <% if(data.city=="Pune"){ %> selected <% } %> >Pune</option>
+                <% city.forEach((x)=>{ %>
+                    <option <% if(data.city==x.name){  %> selected <% } %> ><%= x.name %></option>
+                <% }) %>
             </select>
         </div>
         <div class="form-group">
