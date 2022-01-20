@@ -30,7 +30,7 @@ routes.post("/save", (req,res)=>{
     //    use tss3
     var db = con.db("tss3");
     db.collection("student").insertOne(req.body);
-    res.redirect("/student");
+    res.redirect("/student/view");
 
     });
 })
