@@ -9,18 +9,22 @@ routes.get("/", (req, res) => {
     res.render("layout", pageData);
 })
 
-routes.get("/view", (req, res)=>{
+
+routes.get("/delete/:a", (req, res)=>{
+    var id = req.params.a;
+    var objid = mongodb.ObjectId(id);
     MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
         var db = con.db("tss3");
-        db.collection("record").find().toArray((err, data)=>{
-            var pageData = { pagename : "view_record", title : "Record", data : data};
-            res.render("layout", pageData);
+        db.collection("record").deleteMany({ _id : objid}, ()=>{
+            res.redirect("/");
         })
     })
 })
 
 
 routes.post("/save", (req, res)=>{
+    // console.log(req.body);
+    // return;
     MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
         if(err){
             console.log(err);
@@ -32,7 +36,7 @@ routes.post("/save", (req, res)=>{
                 console.log(err);
                 return;
             }
-            res.redirect("/page/view");
+            res.redirect("/");
         })
     })
 })
