@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SliderComponent } from './slider/slider.component';
+import { SaperatorComponent } from './saperator/saperator.component';
 
 
 
@@ -10,15 +12,18 @@ import { SliderComponent } from './slider/slider.component';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SliderComponent
+    SliderComponent,
+    SaperatorComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports : [
     HeaderComponent,
     FooterComponent,
-    SliderComponent
+    SliderComponent,
+    SaperatorComponent
   ]
 })
 export class SharedModule { }

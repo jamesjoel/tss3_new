@@ -1,1 +1,7 @@
-<p>home works!</p>
+<div class="container">
+    <h1>DOM Event in Angular</h1>
+    <button class="btn btn-primary" (click)="count()" (dblclick)="welcome()">Click Here</button>
+    <h3>{{ counter }}</h3>
+    <!-- <div (mouseover)="demo1()" (mouseout)="demo2()" style="height: 100px; width: {{w}}px; background-color: #124578;"></div> -->
+    <div (mousemove)="demo3()"  style="height: {{h}}px; width: {{w}}px; background-color: #124578;"></div>
+</div>

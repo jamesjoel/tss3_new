@@ -7,9 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  counter=0;
+  w=100;
+  h=100;
   constructor() { }
 
   ngOnInit(): void {
+  }
+  count(){
+    this.counter++;
+  }
+  welcome(){
+    console.log("hello world");
+  }
+  demo1(){
+    this.w=500;
+  }
+  demo2(){
+    this.w=100;
+  }
+
+  demo3(){
+    this.w++;
+    this.h++;
   }
 
 }
