@@ -10,6 +10,8 @@ export class HomeComponent implements OnInit {
   counter=0;
   w=100;
   h=100;
+
+  x=true;
   constructor() { }
 
   ngOnInit(): void {

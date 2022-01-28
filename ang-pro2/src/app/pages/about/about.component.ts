@@ -11,5 +11,25 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  demo1(){
+    console.log("hello world");
+  }
+  demo2(){
+    console.log("----------");
+  }
+  demo3(){
+    console.log("+++++++++++");
+  }
+  demo4(){
+    console.log("**************");
+  }
+  demo5(){
+    console.log("%%%%%%%%%%%");
+  }
+  demo6(){
+    console.log("#####################");
+  }
+  demo10(){
+    return false;
+  }
 }
