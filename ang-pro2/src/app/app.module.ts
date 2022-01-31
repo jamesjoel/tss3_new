@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -10,6 +12,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HelpComponent } from './pages/help/help.component';
 import { Home2Component } from './pages/home2/home2.component';
+import { ServicePageComponent } from './pages/service-page/service-page.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,13 @@ import { Home2Component } from './pages/home2/home2.component';
     HeaderComponent,
     FooterComponent,
     HelpComponent,
-    Home2Component
+    Home2Component,
+    ServicePageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

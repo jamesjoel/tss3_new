@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HelloService } from '../../services/hello.service';
 
 @Component({
   selector: 'app-home2',
@@ -8,9 +9,34 @@ import { Component, OnInit } from '@angular/core';
 export class Home2Component implements OnInit {
 
   a=20;
-  constructor() { }
+  data = ["red", "green", "blue"];
+
+  stu = [
+    {
+      name : 'rohit',
+      age : 25,
+      city : "indore"
+    },
+    {
+      name : 'jaya',
+      age : 20,
+      city : "mumbai"
+    },
+    {
+      name : 'nidhi',
+      age : 21,
+      city : "indore"
+    }
+
+  ]
+  constructor(private x : HelloService) { }
 
   ngOnInit(): void {
+  }
+
+  test(){
+    //console.log("**********");
+    this.x.demo();
   }
 
 }
