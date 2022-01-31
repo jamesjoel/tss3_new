@@ -6,17 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  l=0;
-  t=0;
 
+
+  a="Mohammed";
+  color = ["red", "blue", "yellow"];
+  obj={
+    name : "Hussain"
+  };
 
   constructor() { }
+  
+  
 
   ngOnInit(): void {
   }
   demo(){
-    this.l = Math.floor(Math.random()*300);
-    this.t = Math.floor(Math.random()*300);
+    console.log("hello");
   }
 
 }
