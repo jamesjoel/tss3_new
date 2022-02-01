@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -13,6 +15,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HelpComponent } from './pages/help/help.component';
 import { Home2Component } from './pages/home2/home2.component';
 import { ServicePageComponent } from './pages/service-page/service-page.component';
+import { TeacherComponent } from './pages/teacher/teacher.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +27,14 @@ import { ServicePageComponent } from './pages/service-page/service-page.componen
     FooterComponent,
     HelpComponent,
     Home2Component,
-    ServicePageComponent
+    ServicePageComponent,
+    TeacherComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
