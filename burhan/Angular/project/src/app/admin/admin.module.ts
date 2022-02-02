@@ -10,6 +10,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { AdminComponent } from './admin.component';
 
 
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -17,7 +18,8 @@ import { AdminComponent } from './admin.component';
     ContactComponent,
     HeaderComponent,
     FooterComponent,
-    AdminComponent
+    AdminComponent,
+    
   ],
   imports: [
     CommonModule,

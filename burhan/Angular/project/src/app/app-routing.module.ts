@@ -15,6 +15,7 @@ const routes: Routes = [
   path : "student",
   loadChildren : ()=>import("./student/student.module").then(c=>c.StudentModule)
 }
+  
 ];
 
 @NgModule({

@@ -31,5 +31,8 @@ demo2(){
   this.w++;
   this.h++;
 }
+demo10(){
+  return false;
+}
 
 }
