@@ -11,6 +11,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ServiceComponent } from './shared/service/service.component';
 import { ReservationComponent } from './shared/reservation/reservation.component';
 import { MasterChefComponent } from './shared/master-chef/master-chef.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MasterChefComponent } from './shared/master-chef/master-chef.component'
     ContactComponent,
     ServiceComponent,
     ReservationComponent,
-    MasterChefComponent
+    MasterChefComponent,
+    SignupComponent
   ],
   imports: [
     CommonModule,

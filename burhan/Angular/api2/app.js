@@ -12,7 +12,7 @@ app.get("./api/teacher",(req, res)=>{
     MongoClient.connect("mongodb://localhost:27017",(err, con)=>{
     var db = con.db("tss3");
     db.collection("teacher").find().toArray((err, result)=>{
-
+        res.send(result);
     })    
 })
    

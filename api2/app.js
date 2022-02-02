@@ -28,6 +28,26 @@ app.post("/api/teacher", (req, res)=>{
     })
 })
 
+app.get("/api/employee", (req, res)=>{
+    MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
+        var db = con.db("tss3");
+        db.collection("employee").find().toArray((err, result)=>{
+            res.send(result);
+        })
+    })
+})
+app.post("/api/employee", (req, res)=>{
+    console.log(req.body);
+    // return;
+    var data = req.body;
+    MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
+        var db = con.db("tss3");
+        db.collection("employee").insertOne(data, ()=>{
+            res.send({ success : true });
+        })
+    })
+})
+
 
 
 

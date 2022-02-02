@@ -16,6 +16,7 @@ import { HelpComponent } from './pages/help/help.component';
 import { Home2Component } from './pages/home2/home2.component';
 import { ServicePageComponent } from './pages/service-page/service-page.component';
 import { TeacherComponent } from './pages/teacher/teacher.component';
+import { EmployeeComponent } from './pages/employee/employee.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { TeacherComponent } from './pages/teacher/teacher.component';
     HelpComponent,
     Home2Component,
     ServicePageComponent,
-    TeacherComponent
+    TeacherComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
