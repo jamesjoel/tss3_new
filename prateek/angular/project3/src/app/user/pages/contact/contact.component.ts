@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+
+  a="rohit";
+  color = ["red", "green", "blue"];
+  obj={
+    name : "Prateek"
+  };
+
+  
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  demo(){
+    console.log("hello");
+  }
+  demo1(){
+    console.log("Hello world");
   }
 
 }

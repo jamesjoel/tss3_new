@@ -1,1 +1,26 @@
-<p>about works!</p>
+<div class="container" style="min-height: 400px;">
+    <h3>{{ l }}</h3>
+    <h3>{{ t }}</h3>
+    <div (mousemove)="demo()" style="height: 100px; width: 100px; background-color: crimson; margin-top: {{t}}px; margin-left: {{l}}px;">
+    </div>
+</div>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Hello</h1>
+            <input type="text" (keypress)="demo1()" (keyup)="demo2()" />
+            <br />
+            <br />
+            <input type="text" />
+            <br />
+            <br />
+            <input type="text" (focus)="demo3()" (blur)="demo4()" />
+            <br />
+            <br />
+            <input type="text" />
+            <br />
+            <br />
+            
+        </div>
+    </div>
+</div>
