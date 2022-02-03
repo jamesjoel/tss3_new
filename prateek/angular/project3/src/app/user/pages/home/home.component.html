@@ -1,1 +1,16 @@
-<p>home works!</p>
+<div class="container" style="min-height: 500px;">
+    <h1>DOM Event in Angular</h1>
+    <button class="btn btn-primary" (click)="count()" (dblclick)="welcome()">Click Here</button>
+    <h3>{{ counter }}</h3>
+    <div (mouseover)="demo1()" (mouseout)="demo2()" style="height: 100px; width: {{w}}px; background-color: brown;">
+    </div>
+    <br />
+    <br />
+    <select (change)="demo3()">
+        <option>Select</option>
+        <option>Indore</option>
+        <option>Mumbai</option>
+        <option>Pune</option>
+    </select>
+
+</div>
