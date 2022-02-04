@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { Box1Component } from './box1/box1.component';
 import { Box2Component } from './box2/box2.component';
 import { H10Component } from './h10/h10.component';
+import { ServicePageComponent } from './service-page/service-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     Box1Component,
     Box2Component,
-    H10Component
+    H10Component,
+    ServicePageComponent
   ],
   imports: [
     BrowserModule,
