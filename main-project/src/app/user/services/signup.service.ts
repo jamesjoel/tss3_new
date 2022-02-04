@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,6 @@ export class SignupService {
   ) { }
 
   save(obj:any){
-    return this._http.post<any>("http://localhost:3000/api/signup", obj);
+    return this._http.post<any>(environment.apiUrl+"/api/signup", obj);
   }
 }
