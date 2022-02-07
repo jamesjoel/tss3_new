@@ -4,6 +4,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ServicePageComponent } from './pages/service-page/service-page.component';
+import { TeachersComponent } from './pages/teachers/teachers.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path : "service-page",
     component : ServicePageComponent
+  },
+  {
+    path : "teacher",
+    component : TeachersComponent
   }
 ];
 
