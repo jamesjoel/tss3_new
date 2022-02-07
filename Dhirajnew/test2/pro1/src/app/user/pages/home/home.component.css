@@ -1,0 +1,11 @@
+.box{
+    min-height: 500px;
+}
+
+.bg-col{
+    background-color: rgba(230, 230, 230, 0.876);
+}
+
+.r{
+    color: red;
+}

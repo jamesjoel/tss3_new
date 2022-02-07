@@ -36,6 +36,7 @@ app.get("/api/employee", (req, res)=>{
         })
     })
 })
+
 app.post("/api/employee", (req, res)=>{
     console.log(req.body);
     // return;

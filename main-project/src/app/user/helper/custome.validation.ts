@@ -43,4 +43,4 @@ export function sizeCheck(x=10){
             a.setErrors({ sizeErr : true })
         }
     }
-}
+} 
