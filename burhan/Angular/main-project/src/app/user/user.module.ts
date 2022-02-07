@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
+import { HttpClientModule} from '@angular/common/http';
 
 import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
@@ -13,6 +14,8 @@ import { MasterChefComponent } from './shared/master-chef/master-chef.component'
 import { HeaderComponent } from '../shared/header/header.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { SliderComponent } from '../shared/slider/slider.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,15 +26,17 @@ import { SliderComponent } from '../shared/slider/slider.component';
     ContactComponent,
     ServiceComponent,
     ResevationComponent,
-    MasterChefComponent
+    MasterChefComponent,
+    SignupComponent
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
-    SharedModule
+    ReactiveFormsModule,
+    SharedModule,
+    HttpClientModule
+
   ],
   
 })
-export class UserModule { 
-
-}
+export class UserModule {}
