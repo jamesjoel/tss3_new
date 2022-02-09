@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SignupService} from '../../services/signup.service';
+import { rePassCheck, numCheck, sizeCheck,} from '../../helper/custome.validation';
+import { CityService } from '../../services/city.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,10 +13,13 @@ export class SignupComponent implements OnInit {
  
   signupFrm : FormGroup;
   checkform = false;
+  allcity:any[]=[];
  
   constructor(
     private _fb : FormBuilder,
-    private _signup : SignupService
+    private _signup : SignupService,
+    private _city : CityService
+    
     
     ) { 
     this.signupFrm = this._fb.group(
@@ -28,8 +33,15 @@ export class SignupComponent implements OnInit {
         gender : ["", Validators.required],
         city : ["", Validators.required],
         contact : ["", Validators.required]
+      },
+      {
+        Validators : [rePassCheck(), numCheck(), sizeCheck()]
       }
-    )
+    );
+
+      this._city.getAll().subscribe(data=>{
+        this.allcity = data;
+      })
   }
 
   ngOnInit(): void {
