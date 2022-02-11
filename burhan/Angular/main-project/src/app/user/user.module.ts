@@ -16,6 +16,7 @@ import { FooterComponent } from '../shared/footer/footer.component';
 import { SliderComponent } from '../shared/slider/slider.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ServiceComponent,
     ResevationComponent,
     MasterChefComponent,
-    SignupComponent
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
