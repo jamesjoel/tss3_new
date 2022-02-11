@@ -35,9 +35,9 @@ export class LoginComponent implements OnInit {
     }
     //console.log(this.loginFrm.value)
     this._auth.do_login(this.loginFrm.value).subscribe( data =>{
-      if(data.success == true){
-        this._router.navigate(["/"]);
-      }
+      // console.log(data);
+      localStorage.setItem("token", data.token);
+      this._router.navigate(["/profile"]);
     }, err =>{
       // console.log(err.error);
       if(err.error.type==1)
