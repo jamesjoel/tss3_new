@@ -12,10 +12,11 @@
                             <label>Full Name</label>
                             <input type="text" formControlName="fullname" class="form-control"
                                 [ngClass]="{'is-invalid' : checkform && signupFrm.controls.fullname.errors}" />
-                            <div *ngIf="checkform && signupFrm.controls.fullname.errors" class="invalid-feedback">Insert
-                                Your Full Name</div>
+                            <div *ngif="checkform && signupFrm.controls.fullname.errors" class="invalid-feedback">Insert
+                                Your Full Name
+                            </div>
                         </div>
-
+                    </div>
                         <div class="form-group">
                             <label>User Name/Email</label>
                             <input type="text" formControlName="email"
@@ -74,6 +75,10 @@
                             <select class="form-control" formControlName="city"
                                 [ngClass]="{'is-invalid' : checkform && signupFrm.controls.city.errors}">
                                 <option value="select">Select</option>
+                                <option value="indore">Indore</option>
+                                <option value="ujjain">Ujjain</option>
+                                <option value="mumbai">Mumbai</option>
+                                <option value="pune">Pune</option>
                                 <option *ngif="let c of all city" value="{{ c.name }}"></option>
                             </select>
                             <div *ngif="checkform && signupFrm.controls.city.errors" class="invalid-feedback">Select Your
@@ -84,18 +89,23 @@
                             <label>Contact</label>
                             <input type="text" class="form-control" formControlName="contact"
                                 [ngClass]="{'is-invalid' : checkform && signupFrm.controls.contact.errors }" />
-                            <div *ngIf="checkform && signupFrm.controls.contact.errors" class="invalid-feedback">
-                                <div *ngIf="checkform && signupFrm.controls.contact.errors.required">Insert Your Contact
+                            <div *ngif="checkform && signupFrm.controls.contact.errors" class="invalid-feedback">
+                                <div *ngif="checkform && signupFrm.controls.contact.errors.required">Insert Your Contact
                                     Number</div>
-                                <div *ngIf="checkform && signupFrm.controls.contact.errors.numErr">Insert Number Only</div>
-                                <div *ngIf="checkform && signupFrm.controls.contact.errors.sizeErr">Inser 10 Number</div>
+                                <div *ngif="checkform && signupFrm.controls.contact.errors.numErr">Insert Number Only</div>
+                                <div *ngif="checkform && signupFrm.controls.contact.errors.sizeErr">Inser 10 Number</div>
                             </div>
                         </div>
-
+                    
                     </div>
-
+                
                         <div class="card-footer">
                             <button class="btn btn-primary" (click)="signup()">signup</button>
                         </div>
-                    </div>
+                    
                 </form>
+            </div>
+        </div>
+        </div>
+
+
