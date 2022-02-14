@@ -7,6 +7,8 @@ let database = require("../config/database");
 let collName = "user";
 
 routes.post("/", (req, res)=>{
+    console.log(req.body);
+    return;
     delete req.body.re_password;
     req.body.password = sha1(req.body.password);
     MongoClient.connect(database.dbUrl, (err, con)=>{

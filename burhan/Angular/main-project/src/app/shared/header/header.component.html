@@ -9,20 +9,34 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0 pe-4">
             <a routerLink="/" class="nav-item nav-link">Home</a>
+
+            <ng-template [ngIf]="_auth.isLoggedIn()" [ngIfElse]="notLoggedIn">
+                
+            <a routerLink="/profile" class="nav-item nav-link">Profile</a>
+            <a (click)="_auth.logout()" href="#" class="nav-item nav-link">Logout</a>
+            </ng-template>
+            <ng-template #notLoggedIn>
             <a routerLink="/signup" class="nav-item nav-link">signup</a>
+            <a routerLink="/login" class="nav-item nav-link">Login</a>
+            </ng-template>
+
+                      
             <a routerLink="/about" class="nav-item nav-link">About</a>            
             <a routerLink="/contact" class="nav-item nav-link">Contact</a>
             <a href="menu.html" class="nav-item nav-link">Menu</a>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Restaurant</a>
                 <div class="dropdown-menu m-0">
-                    <a href="booking.html" class="dropdown-item">Booking</a>
-                    <a href="team.html" class="dropdown-item">Our Team</a>
-                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                    
+                    
+                    <a routerLink="/resto/signup" class="dropdown-item">Signup</a>
+                    <a routerLink="/resto/login" class="dropdown-item">Login</a>
                 </div>
             </div>
             
         </div>
-        <a href="" class="btn btn-primary py-2 px-4">Book A Table</a>
+        
     </div>
 </nav>
+
+

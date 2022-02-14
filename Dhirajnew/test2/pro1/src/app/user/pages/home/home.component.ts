@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
         rePassword : ["", Validators.required]
       },
       {
-        Validators : [ checkPhone() ]
+        validator : [ checkPhone() ]
       }
     );
 

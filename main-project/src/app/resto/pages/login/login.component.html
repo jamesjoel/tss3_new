@@ -1,0 +1,39 @@
+
+<app-saperator></app-saperator>
+<div class="container" style="min-height: 500px;">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form [formGroup]="loginFrm">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Restaurent Login</h5>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input formControlName="username" [ngClass]="{'is-invalid' : checkFrm && loginFrm.controls.username.errors }" type="text" class="form-control" />
+                        <div class="invalid-feedback" *ngIf="checkFrm && loginFrm.controls.username.errors">
+                            Insert Your Username
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input formControlName="password" [ngClass]="{'is-invalid' : checkFrm && loginFrm.controls.password.errors }" type="password" class="form-control" />
+                        <div class="invalid-feedback" *ngIf="checkFrm && loginFrm.controls.password.errors">
+                            Insert Your Password
+                        </div>
+                    </div>
+                    <Br />
+                    <p class="text-danger text-center">{{ errMsg }}</p>
+                </div>
+                <div class="card-footer">
+                    <input type="submit" (click)="submit()" value="Login" class="btn btn-primary" />
+                </div>
+            </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+

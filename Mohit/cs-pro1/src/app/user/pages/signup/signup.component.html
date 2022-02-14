@@ -1,0 +1,69 @@
+<app-saperator></app-saperator>
+<div class="container" style="min-height: 500px;">
+<div class="row">
+   <div class="col-md-6 offset-md-3">
+     <form [formGroup]="signupFrm">
+      <div class="card">
+       <div class="card header">
+         <h5>User Registration</h5>
+       </div>
+        <div class="card body">
+          <div class="form-group">
+             <label>Full Name</label>
+             <input type="text" formControlName="fullname"  [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.fullname.errors}" class="form-control" />
+             <div *ngIf="checkForm && signupFrm.controls.fullname.errors" class="invalid-feedback">Insert Your Fullname</div>
+          </div>
+          <div class="form-group">
+             <label>Username/Email</label>
+             <input type="text" formControlName="email" [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.email.errors}" class="form-control" />
+             <div *ngIf="checkForm && signupFrm.controls.email.errors" class="invalid-feedback">
+             <div *ngIf="signupFrm.controls.email.errors.required">Insert Your Email Id</div>
+             <div *ngIf="signupFrm.controls.email.errors.email">Insert Your Correct Email</div>
+             </div>
+          </div>
+          <div class="form-group">
+             <label>Password</label>
+             <input type="password" formControlName="password"  [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.password.errors}" class="form-control"/>
+             <div *ngIf="checkForm && signupFrm.controls.password.errors" class="invalid-feedback">Insert Your Password</div>
+          </div>
+          <div class="form-group">
+             <label>Re-Password</label>
+             <input type="password" formControlName="re_password" [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.re_password.errors}" class="form-control"/>
+             <div *ngIf="checkForm && signupFrm.controls.re_password.errors" class="invalid-feedback">Insert Your Re-Password</div> 
+          </div> 
+          <div class="form-group">
+             <label>Address</label>
+             <textarea class="form-control"formControlName="address" [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.address.errors}"></textarea>
+             <div *ngIf="checkForm && signupFrm.controls.address.errors" class="invalid-feedback">Insert Your Full address </div>
+          </div>
+          <div class="form-group">
+             <label>Gender</label>
+             <br />     
+              Male <input type="radio" value="Male" [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.gender.errors}" formControlName="gender"/>
+              Female <input type="radio" value="Female" [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.gender.errors}" formControlName="gender"/>
+             <div *ngIf="checkForm && signupFrm.controls.gender.errors" class="invalid-feedback">Select Your Gender</div>
+          </div>
+          <div class="form-group">
+             <label>city</label>
+             <select class="form-control" formControlName="city" [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.city.errors}">
+               <option value="">Select</option>
+               <option value="Indore">Indore</option>
+               <option value="Mumbai">Mumbai</option>
+               <option value="Pune">Pune</option>
+             </select>
+             <div *ngIf="checkForm && signupFrm.controls.city.errors" class="invalid-feedback">Select Your City</div>
+          </div>
+          <div class="form-group">
+             <label>Contact</label>
+             <input type="text" formControlName="contact" [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.contact.errors}" class="form-control"/>
+             <div *ngIf="checkForm && signupFrm.controls.contact.errors" class="invalid-feedback">Insert Your Contact</div>
+          </div>
+        </div>
+        <div class="card-footer">
+         <button class="btn btn-primary" (click)="signup()">signup</button>
+        </div>
+        </div>
+        </form> 
+    </div>    
+</div>
+</div>
