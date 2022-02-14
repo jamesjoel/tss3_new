@@ -17,6 +17,7 @@ import { SliderComponent } from '../shared/slider/slider.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { LoginComponent } from './pages/login/login.component';
     ResevationComponent,
     MasterChefComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

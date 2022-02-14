@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
  
   signupFrm : FormGroup;
-  checkform = false;
+  checkForm = false;
   allcity:any[]=[];
  
   constructor(
@@ -52,7 +52,7 @@ export class SignupComponent implements OnInit {
 signup(){
   if(this.signupFrm.invalid){
     
-  this.checkform = true;
+  this.checkForm = true;
   return;
   }
  this._signup.save(this.signupFrm.value).subscribe(data=>{
