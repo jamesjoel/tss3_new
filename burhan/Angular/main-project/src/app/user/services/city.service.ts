@@ -11,6 +11,6 @@ export class CityService {
   constructor(private _http : HttpClient) { }
 
   getAll(){
-    return this._http.get<any>(environment+"/api/city");
+    return this._http.get<any>(environment.apiurl+"/api/city");
   }
 }

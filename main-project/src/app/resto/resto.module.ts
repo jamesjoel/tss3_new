@@ -10,6 +10,10 @@ import { DashComponent } from './pages/dash/dash.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LeftNavComponent } from './shared/left-nav/left-nav.component';
+import { AddCategoryComponent } from './pages/add-category/add-category.component';
+import { ViewCategoryComponent } from './pages/view-category/view-category.component';
+import { ViewItemComponent } from './pages/view-item/view-item.component';
+import { AddItemComponent } from './pages/add-item/add-item.component';
 
 
 @NgModule({
@@ -18,7 +22,11 @@ import { LeftNavComponent } from './shared/left-nav/left-nav.component';
     DashComponent,
     LoginComponent,
     SignupComponent,
-    LeftNavComponent
+    LeftNavComponent,
+    AddCategoryComponent,
+    ViewCategoryComponent,
+    ViewItemComponent,
+    AddItemComponent
   ],
   imports: [
     CommonModule,

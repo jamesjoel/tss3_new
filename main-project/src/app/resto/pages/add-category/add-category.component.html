@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <app-left-nav></app-left-nav>
+        </div>
+        <div class="col-md-9">
+            <h4>Add New Category</h4>
+
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <form [formGroup]="cateFrm">
+                    <div class="form-group mt-4">
+                        <label>Category/Menu Name</label>
+                        <input type="text" formControlName="name" [ngClass]="{'is-invalid' : checkFrm && cateFrm.controls.name.errors }" class="form-control" />
+                    </div>
+                    <Br />
+                    <br />
+                    <input (click)="submit()" type="submit" value="Add" class="btn btn-primary" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

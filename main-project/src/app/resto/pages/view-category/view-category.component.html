@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <app-left-nav></app-left-nav>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <h2>All Category</h2>
+                    <table class="table table-info table-bordered">
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Name</th>
+                        </tr>
+                        <tr *ngFor="let c of allCate; let n = index">
+                            <td>{{ n+1 }}</td>
+                            <td>{{ c.name }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
