@@ -1,0 +1,94 @@
+<div class="container mt-3" style="min-height: 500px;">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form [formGroup]="signupFrm">
+                <!-- <p>{{ allCity | json }}</p> -->
+                <div class="card">
+                    <div class="card-header" style="background-color: aqua;">
+                        <h5>User Registration</h5>
+                    </div>
+                    <div class="card-body" style="background-color: beige;">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" formControlName="fullname" class="form-control"
+                                [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.fullname.errors}" />
+                            <div *ngIf="checkForm && signupFrm.controls.fullname.errors" class="invalid-feedback">Insert
+                                Your Full Name</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Username/Email</label>
+                            <input type="text" formControlName="email"
+                                [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.email.errors }"
+                                class="form-control" />
+                            <div *ngIf="checkForm && signupFrm.controls.email.errors" class="invalid-feedback">
+                                <div *ngIf="signupFrm.controls.email.errors.email">Email Id is not Correct</div>
+                                <div *ngIf="signupFrm.controls.email.errors.required">Insert Your Email Id</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" formControlName="password"
+                                [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.password.errors }"
+                                class="form-control" />
+                            <div *ngIf="checkForm && signupFrm.controls.password.errors" class="invalid-feedback">Insert
+                                Your Password</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Re-Password</label>
+                            <input type="password" formControlName="re_password"
+                                [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.re_password.errors }"
+                                class="form-control" />
+                            <div *ngIf="checkForm && signupFrm.controls.re_password.errors" class="invalid-feedback">
+                                <div *ngIf="signupFrm.controls.re_password.errors.required">Insert Your Re-Password</div>
+                                <div *ngIf="signupFrm.controls.re_password.errors.rePassErr">Password and Re-Password not matched</div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea class="form-control" formControlName="address"
+                                [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.address.errors }"></textarea>
+                            <div *ngIf="checkForm && signupFrm.controls.address.errors" class="invalid-feedback">Insert Your Address</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <Br />
+                            Male <input type="radio" value="male" formControlName="gender"
+                                [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.gender.errors }" />
+                            Female <input type="radio" value="female" formControlName="gender"
+                                [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.gender.errors }" />
+                            <div *ngIf="checkForm && signupFrm.controls.gender.errors" class="text-danger">Select Your Gender</div>
+                        </div>
+                        <div class="form-group">
+                            <label>City</label>
+                            <select class="form-control" [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.city.errors }" formControlName="city">
+                                <option value="select"> Select </option>
+                                <option value="indore"> Indore </option>
+                                <option value="pune"> Pune </option>
+                                <option value="mumbai"> Mumbai </option>
+                            </select>
+                            <div *ngIf="checkForm && signupFrm.controls.city.errors" class="invalid-feedback">Select Your City</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Contact</label>
+                            <input type="text" formControlName="contact"
+                                [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.contact.errors }" class="form-control" />
+                            <div *ngIf="checkForm && signupFrm.controls.contact.errors" class="invalid-feedback">
+                                <div *ngIf="signupFrm.controls.contact.errors.required">Insert Your contact number</div>
+                                <div *ngIf="signupFrm.controls.contact.errors.numErr">Insert Numbers only</div>
+                                <div *ngIf="signupFrm.controls.contact.errors.sizeErr">Insert 10 Numbers only</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer" style="background-color: black;">
+                        <button class="btn btn-success" (click)="signup()">Signup</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
