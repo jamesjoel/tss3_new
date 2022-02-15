@@ -40,12 +40,12 @@ const routes: Routes = [
         canActivate : [BackdoorGuard]
       },
       {
-        path : "add-item",
+        path : "add-items",
         component : AddItemComponent,
         canActivate : [BackdoorGuard]
       },
       {
-        path : "view-item",
+        path : "view-items",
         component : ViewItemComponent,
         canActivate : [BackdoorGuard]
       }

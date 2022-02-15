@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from '../../services/category.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ItemsService } from '../../services/items.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-add-item',
@@ -6,10 +11,41 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-item.component.css']
 })
 export class AddItemComponent implements OnInit {
+  allCate:any[];
+  itemFrm : FormGroup;
+  checkFrm = false;
+  constructor(
+    private _cate : CategoryService,
+    private _fb : FormBuilder,
+    private _items : ItemsService,
+    private _router : Router
+  ) {
+    this._cate.getAll().subscribe(data=>{
+      this.allCate = data;
+    })
 
-  constructor() { }
+    this.itemFrm = this._fb.group({
+      name : ["", Validators.required],
+      price : [null, Validators.required],
+      category : ["", Validators.required]
+    })
+
+
+   }
 
   ngOnInit(): void {
+  }
+
+  submit(){
+    if(this.itemFrm.invalid){
+      this.checkFrm = true;
+      return;
+    }
+    this._items.save(this.itemFrm.value).subscribe(data=>{
+      // console.log(data);
+      this._router.navigate(["/resto/view-items"]);
+    })
+    
   }
 
 }

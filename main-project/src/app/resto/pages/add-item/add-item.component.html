@@ -3,5 +3,33 @@
         <div class="col-md-3">
             <app-left-nav></app-left-nav>
         </div>
+        <div class="col-md-9">
+            <div class="row">
+                <form [formGroup]="itemFrm">
+                <div class="col-md-8 offset-md-2">
+                    <h3 class="text-center">Add New Items</h3>
+                    <div class="form-group">
+                        <label>Item Name</label>
+                        <input [ngClass]="{'is-invalid' : checkFrm && itemFrm.controls.name.errors }" formControlName="name" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Item Price</label>
+                        <input [ngClass]="{'is-invalid' : checkFrm && itemFrm.controls.price.errors }"  formControlName="price" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Item Category</label>
+                        <select [ngClass]="{'is-invalid' : checkFrm && itemFrm.controls.category.errors }"  formControlName="category" class="form-control">
+                            <option>Select</option>
+                            <option *ngFor="let c of allCate">{{ c.name }}</option>
+                        </select>
+                    </div>
+                    <Br />
+                    <Br />
+                    <input type="submit" (click)="submit()" value="Add" class="btn btn-primary" />
+                    
+                </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
