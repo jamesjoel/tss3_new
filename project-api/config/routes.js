@@ -8,6 +8,7 @@ routes.use("/api/user/auth", (require("../controllers/UserAuthController")));
 routes.use("/api/resto/auth", (require("../controllers/RestoAuthController")));
 routes.use("/api/user/profile", (require("../controllers/ProfileController")));
 routes.use("/api/category", (require("../controllers/CategoryController")));
+routes.use("/api/items", (require("../controllers/ItemsController")));
 
 
 

@@ -3,6 +3,22 @@
         <div class="col-md-3">
             <app-left-nav></app-left-nav>
         </div>
+        <Div class="col-md-9">
+            <table class="table table-info table-bordered">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Item Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                </tr>
+                <tr *ngFor="let i of allItems; let n = index">
+                    <td>{{ n+1 }}</td>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.price }}</td>
+                    <td>{{ i.category }}</td>
+                </tr>
+            </table>
+        </Div>
     </div>
 </div>
 
