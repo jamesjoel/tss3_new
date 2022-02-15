@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+        <form [formGroup]="signupFrm">
+                <div class="card mt-5">
+                <div class="card-header bg-primary" > Signup Form</div>
+                <div class="card-body " style="background-color: aqua; ">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" formControlName="fullname" class="form-control"/>
+                        <div *ngif= "checkForm && signupFrm.controls.fullname.errors" class="text-danger">Insert your full name</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" formControlName="email" class="form-control"/>
+                        <!-- <div *ngif="checkForm && signupFrm.controls.email.errors" class="invalid-feedback text-danger">Insert your email id</div> -->
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" formControlName="password" class="form-control"/>
+                        <!-- <div *ngif="checkForm && signupFrm.controls.password.errors" class="invalid-feedback text-danger">Insert your password</div> -->
+                    </div>
+                    <div class="form-group">
+                        <label>Re-password</label>
+                        <input type="password" formControlName="re_password" class="form-control"/>
+                        <!-- <div *ngif="checkForm && signupFrm.controls.re_password.errors" class="invalid-feedback text-danger">Insert your re-password</div> -->
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea type="text" formControlName="address" class="form-control"></textarea>
+                        <!-- <div *ngif="checkForm && signupFrm.controls.address.errors " class="invalid-feedback text-danger">Insert your address</div> -->
+                    </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <select class="form-control"formControlName="city">
+                            <option>select</option>
+                            <option>Indore</option>
+                            <option>Pune</option>
+                            <option>Bhopal</option>
+                            <option>Gujrat</option>
+                        </select>
+                        <!-- <div *ngif="checkForm && signupFrm.controls.city.errors" class="invalid-feedback text-danger">Insert your city</div> -->
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <br/>
+                        <input type="radio" formControlName="gender"  value ="male"/>Male
+                        <input type="radio" formControlName="gender" value ="female"/>Female
+                        <!-- <div *ngif="checkForm && signupFrm.controls.gender.errors" class="invalid-feedback text-danger">Insert your gender</div> -->
+                    </div>
+                </div>
+
+                <div class="card-footer bg-primary">
+                    <button class="btn btn-success" (click)="signup()"> Signup </button>
+                </div>
+                
+                </div>
+         </form>
+    </div>
+</div>
