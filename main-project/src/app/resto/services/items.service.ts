@@ -26,4 +26,22 @@ export class ItemsService {
       }
     })
   }
+
+  delete(id:any){
+    return this._http.delete<any>(environment.apiUrl+"/api/items/"+id, 
+    {
+      headers : {
+        Authorization : JSON.stringify(localStorage.getItem("resto_token"))
+      }
+    });
+  }
+
+  update(obj:any, id : any){
+    return this._http.put<any>(environment.apiUrl+"/api/items/"+id, obj, 
+    {
+      headers : {
+        Authorization : JSON.stringify(localStorage.getItem("resto_token"))
+      }
+    });
+  }
 }

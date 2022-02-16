@@ -9,6 +9,8 @@ import { ItemsService } from '../../services/items.service';
 export class ViewItemComponent implements OnInit {
 
   allItems : any[];
+  item:any;
+  x:any;
   constructor(
     private _items : ItemsService
   ) { 
@@ -18,6 +20,19 @@ export class ViewItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  askDelete(obj:any){
+    console.log(obj);
+    this.item = obj;
+  }
+  confDelete(){
+    this._items.delete(this.item._id).subscribe(data=>{
+      // console.log(data);
+      let n = this.allItems.indexOf(this.item);
+      this.allItems.splice(n, 1);
+      this.x = true;
+    })
   }
 
 }

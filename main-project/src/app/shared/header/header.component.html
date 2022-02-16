@@ -8,15 +8,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0 pe-4">
-            <a routerLink="/" class="nav-item nav-link" routerLinkActive="active">Home</a>
+            <a routerLink="/" class="nav-item nav-link" [routerLinkActiveOptions]="{exact:
+                true}" routerLinkActive="active">Home</a>
 
             <ng-template [ngIf]="_auth.isLoggedIn()" [ngIfElse]="notLoggedIn">
-                <a routerLink="/profile" class="nav-item nav-link">Profile</a>
-                <a (click)="_auth.logout()" href="#" class="nav-item nav-link">Logout</a>
+                <a routerLink="/profile" routerLinkActive="active" class="nav-item nav-link">Profile</a>
+                <a (click)="_auth.logout()" routerLinkActive="active" style="cursor: pointer;" class="nav-item nav-link">Logout</a>
             </ng-template>
             <ng-template #notLoggedIn>
-                <a routerLink="/signup" class="nav-item nav-link">Signup</a>
-                <a routerLink="/login" class="nav-item nav-link">Login</a>
+                <a routerLink="/signup" routerLinkActive="active" class="nav-item nav-link">Signup</a>
+                <a routerLink="/login" routerLinkActive="active" class="nav-item nav-link">Login</a>
             </ng-template>
 
             
