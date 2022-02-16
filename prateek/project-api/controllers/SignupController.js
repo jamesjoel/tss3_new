@@ -10,7 +10,7 @@ routes.post("/", (req, res)=>{
     console.log(req.body);
     delete req.body.re_password;
     req.body.password = sha1(req.body.password);
-    MongoClient.connect(database.dburl, (err, con)=>{
+    MongoClient.connect(database.dbUrl, (err, con)=>{
         var db = con.db(database.dbName);
         db.collection(collName).insertOne(req.body, (err)=>{
             res.send({ success : true });
