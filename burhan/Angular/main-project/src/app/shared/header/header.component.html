@@ -26,8 +26,11 @@
             <a href="menu.html" class="nav-item nav-link">Menu</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Restaurant</a>
+
                 <div class="dropdown-menu m-0">
-                    
+                    <ng-template [ngif]="_restoauth.isRestoLoggedIn()" [ngIfElase]="restoNotLoggedIn">
+                        <a routetLink="/resto/dash"
+                    </ng-template>
                     
                     <a routerLink="/resto/signup" class="dropdown-item">Signup</a>
                     <a routerLink="/resto/login" class="dropdown-item">Login</a>

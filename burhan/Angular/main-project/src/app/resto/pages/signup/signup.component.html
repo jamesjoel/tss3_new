@@ -1,37 +1,39 @@
-<div class="container mt-2">
+<div class="container mt-2" style="min-height: 600px;">
     <div class="row">
-        <div class="col-md-6 offset--md-3">
-            <h4>Restaurent Signup</h4>
-            <form [formGroup]=restoFrm>
+        <div class="col-md-6 offset-md-3">
+            <h4>Restaurent Singup</h4>
+            <form [formGroup]="restoFrm">
             <div class="form-group">
                 <label>Restaurent Name</label>
-                <input type="text" formcontrolName="resto_name" [ngClass]="{'is-invalid' : checkFrm && restoFrm.controls.resto_name.errors}" class="form-control" />
-                <div class="invalid-feedback" *ngIf="checkFrm && restoFrm.controls.resto_name.errors">Insert Your Restaurent Name
+                <input type="text" formControlName="resto_name" [ngClass]="{'is-invalid' : checkFrm && restoFrm.controls.resto_name.errors }" class="form-control" />
+                <div class="invalid-feedback" *ngIf="checkFrm && restoFrm.controls.resto_name.errors">
+                    Insert Your Restaurent Name
+                </div>
             </div>
             <div class="form-group">
-                <label>User Name</label>
-                <input type="text" formcontrolName="username"[ngClass]="{'is-invalid' : checkFrm && restoFrm.controls.username.errors}" class="Form-Control" />
+                <label>Username</label>
+                <input type="text" formControlName="username" [ngClass]="{'is-invalid' : checkFrm && restoFrm.controls.username.errors }" class="form-control" />
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" formcontrolName="password" [ngClass]="{'is-invalid' : checkFrm && restoFrm.controls.password.errors}" class="Form-Control" />
+                <input type="password" formControlName="password" [ngClass]="{'is-invalid' : checkFrm && restoFrm.controls.password.errors }" class="form-control" />
             </div>
             <div class="form-group">
                 <label>Re-Password</label>
-                <input type="password" formcontrolName="re_password" [ngClass]="{'is-invalid' : checkFrm && restoFrm.controls.re_password.errors}" lass="Form-Control" />
+                <input type="password" formControlName="re_password" [ngClass]="{'is-invalid' : checkFrm && restoFrm.controls.re_password.errors }" class="form-control" />
             </div>
             <div class="form-group">
                 <label>Address</label>
-                <textarea type="password" formcontrolName="address" [ngClass]="{'is-invalid' : checkFrm && restoFrm.controls.address.errors}" class="Form-Control"></textarea>
+                <textarea formControlName="address" [ngClass]="{'is-invalid' : checkFrm && restoFrm.controls.address.errors }" class="form-control"></textarea>
             </div>
             <div class="form-group">
                 <label>Contact</label>
-                <input type="text" formcontrolName="contact" [ngClass]="{'is-invalid' : checkFrm && restoFrm.controls.contact.errors}" class="form-control" />
+                <input type="text" formControlName="contact" [ngClass]="{'is-invalid' : checkFrm && restoFrm.controls.contact.errors }" class="form-control" />
             </div>
-            <br />
-            <input type="submit" value="signup" (click)="submit" class="btn btn-primary" />
-        
+            <Br />
+            <input type="submit" value="Signup" (click)="submit()" class="btn btn-primary" />
+            </form>
         </div>
-    </form>
     </div>
 </div>
+
