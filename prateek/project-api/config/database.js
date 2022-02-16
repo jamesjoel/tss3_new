@@ -1,4 +1,5 @@
 module.exports = {
     dbName :"tss3",
-    dburl : "mongodb://localhost:27017"
+    dbUrl : "mongodb://localhost:27017",
+    uniqueStr : "tss"
 }
