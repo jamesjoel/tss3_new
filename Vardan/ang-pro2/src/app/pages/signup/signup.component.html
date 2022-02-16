@@ -7,8 +7,8 @@
                 <div class="card-body " style="background-color: aqua; ">
                     <div class="form-group">
                         <label>Full Name</label>
-                        <input type="text" formControlName="fullname" class="form-control"/>
-                        <div *ngif= "checkForm && signupFrm.controls.fullname.errors" class="text-danger">Insert your full name</div>
+                        <input type="text" formControlName="fullname" class="form-control" [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.fullname.errors}" />
+                        <div *ngIf="checkForm && signupFrm.controls.fullname.errors" >Insert Your Full Name</div>
                     </div>
                     <div class="form-group">
                         <label>Email</label>

@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit {
   }
 
   signup(){
-    this.checkForm = true;
+   
     console.log(this.signupFrm.value);
   }
 
