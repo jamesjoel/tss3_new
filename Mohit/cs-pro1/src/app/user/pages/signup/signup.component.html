@@ -29,8 +29,11 @@
           <div class="form-group">
              <label>Re-Password</label>
              <input type="password" formControlName="re_password" [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.re_password.errors}" class="form-control"/>
-             <div *ngIf="checkForm && signupFrm.controls.re_password.errors" class="invalid-feedback">Insert Your Re-Password</div> 
-          </div> 
+             <div *ngIf="checkForm && signupFrm.controls.re_password.errors" class="invalid-feedback">
+             <div *ngIf="signupFrm.controls.re_password.errors.required">Insert Your Re-Password</div>
+             <div *ngIf="signupFrm.controls.re_password.errors.rePassErr">Password and Re-password</div>
+          </div>
+         </div>  
           <div class="form-group">
              <label>Address</label>
              <textarea class="form-control"formControlName="address" [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.address.errors}"></textarea>
@@ -47,18 +50,20 @@
              <label>city</label>
              <select class="form-control" formControlName="city" [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.city.errors}">
                <option value="">Select</option>
-               <option value="Indore">Indore</option>
-               <option value="Mumbai">Mumbai</option>
-               <option value="Pune">Pune</option>
+               <option *ngFor="let c of allCity">{{ c.name }}</option>
+               <option>indore</option>
              </select>
              <div *ngIf="checkForm && signupFrm.controls.city.errors" class="invalid-feedback">Select Your City</div>
           </div>
           <div class="form-group">
              <label>Contact</label>
              <input type="text" formControlName="contact" [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.contact.errors}" class="form-control"/>
-             <div *ngIf="checkForm && signupFrm.controls.contact.errors" class="invalid-feedback">Insert Your Contact</div>
+             <div *ngIf="checkForm && signupFrm.controls.contact.errors" class="invalid-feedback">
+             <div *ngIf="signupFrm.controls.contact.errors.numErr">Insert Number Only</div>
+             <div *ngIf="signupFrm.controls.contact.errors.sizeErr">Insert 10 Numbers Only</div>
           </div>
         </div>
+      </div>
         <div class="card-footer">
          <button class="btn btn-primary" (click)="signup()">signup</button>
         </div>
