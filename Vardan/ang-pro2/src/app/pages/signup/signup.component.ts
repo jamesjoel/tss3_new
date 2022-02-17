@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup , FormBuilder , Validators, } from '@angular/forms';
 import { RequiredValidator } from '@angular/forms';
+import { SignupService } from 'src/app/services/signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -12,11 +13,15 @@ export class SignupComponent implements OnInit {
   signupFrm:FormGroup;
   checkForm = false;
 
-  constructor(private _fb: FormBuilder) { 
+  constructor(
+    private _fb: FormBuilder,
+    private _signups : SignupService
+    )
+   { 
     this.signupFrm= this._fb.group(
       {
         fullname : ["",Validators.required],
-        email : ["",Validators.required],
+        email : ["", [Validators.required, Validators.email]],
         password : ["",Validators.required],
         re_password : ["",Validators.required],
         address : ["",Validators.required],
@@ -30,8 +35,13 @@ export class SignupComponent implements OnInit {
   }
 
   signup(){
-   
-    console.log(this.signupFrm.value);
+    if(this.signupFrm.invalid){
+      this.checkForm=true;
+      return;
+    }
+    this._signups.save(this.signupFrm.value).subscribe(data=>{
+      console.log(data);
+    })
   }
 
 }
