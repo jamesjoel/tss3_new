@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators  } from '@angular/forms';
+import { Router } from '@angular/router';
+import { SignupService } from '../../services/signup.service';
 
 
 @Component({
@@ -15,7 +17,9 @@ export class SignupComponent implements OnInit {
 
 
   constructor(
-    private _fb : FormBuilder
+    private _fb : FormBuilder,
+    private _signup : SignupService,
+    private _router : Router
   ) {
     this.restoFrm = this._fb.group({
      resto_name : ["", Validators.required],
@@ -35,7 +39,13 @@ export class SignupComponent implements OnInit {
       this.checkFrm = true;
       return;
     }
-    console.log(this.restoFrm.value)
+    //console.log(this.restoFrm.value);  
+     
+     this._signup.save(this.restoFrm.value).subscribe(data=>{
+       //console.log(data);
+       this._router.navigate(["/resto/login"]);
+     })
   }
+
 
 }

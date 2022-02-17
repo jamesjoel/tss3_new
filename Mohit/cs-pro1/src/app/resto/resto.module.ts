@@ -4,13 +4,14 @@ import { SharedModule} from '../shared/shared.module'
 
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { RestoRoutingModule } from './resto-routing.module';
 import { RestoComponent } from './resto.component';
 import { DashComponent } from './pages/dash/dash.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { LeftNavComponent } from './shared/left-nav/left-nav.component';
 
 
 @NgModule({
@@ -18,14 +19,15 @@ import { SignupComponent } from './pages/signup/signup.component';
     RestoComponent,
     DashComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    LeftNavComponent
   ],
   imports: [
     CommonModule,
     RestoRoutingModule,
     SharedModule,
     ReactiveFormsModule,
-    HttpClient
+    HttpClientModule
   ]
 })
 export class RestoModule { }

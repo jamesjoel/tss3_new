@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SignupService {
 
-  constructor() { }
+  constructor(private _http : HttpClient) { }
 
 
   save(obj:any){
