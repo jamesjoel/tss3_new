@@ -34,8 +34,8 @@
                 <p>Are you sure want to delete <b *ngIf="item">{{ item.name }}</b></p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-danger btn-sm" [attr.data-bs-dismiss]="x ? 'modal' : ''" (click)="confDelete()">Delete</button>
-                <button data-bs-dismiss="modal" class="btn btn-dark btn-sm">Close</button>
+                <button class="btn btn-danger btn-sm"  (click)="confDelete(closeBtn)">Delete</button>
+                <button data-bs-dismiss="modal" #closeBtn class="btn btn-dark btn-sm">Close</button>
             </div>
         </div>
     </div>

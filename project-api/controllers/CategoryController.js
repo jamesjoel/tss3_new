@@ -33,6 +33,29 @@ routes.post("/", (req, res)=>{
     }
 })
 
+routes.delete("/:id", (req, res)=>{
+    var id = mongodb.ObjectId(req.params.id);
+    if(req.headers.authorization){
+        var token = JSON.parse(req.headers.authorization);
+        var obj = jwt.decode(token, database.uniqueStr);
+        if(obj){
+            MongoClient.connect(database.dbUrl, (err, con)=>{
+                var db = con.db(database.dbName);
+                db.collection(collName).deleteMany({ _id : id }, ()=>{
+                    res.status(200).json({ success : true });
+                });
+            })
+        }else{
+            
+            res.status(401).json({ success : false });
+        }
+
+    }else{
+        res.status(401).json({ success : false });
+    }
+})
+
+
 routes.get("/", (req, res)=>{
     if(req.headers.authorization){
         var token = JSON.parse(req.headers.authorization);
