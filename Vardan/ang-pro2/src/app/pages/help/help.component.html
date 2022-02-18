@@ -1,0 +1,22 @@
+
+<div class="container mt-4">
+    <div class="row">
+        <Div class="col-md-12">
+            
+            <button (click)="demo1()" class="btn btn-primary">Show-Hide</button>
+            <Br />
+            <Br />
+            <div *ngIf="a" class="box"></div>
+            <Br />
+            <Br />
+            <input type="{{ type }}" />&nbsp;&nbsp;&nbsp;<button (click)="change()">{{ label }}</button>
+
+
+            <div class="box2" *ngIf="x==200; else box"></div>
+            <ng-template #box>
+                <div class="box3"></div>
+            </ng-template>
+            
+        </Div>
+    </div>
+</div>

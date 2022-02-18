@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import {HttpClientModule} from '@angular/common/http';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -14,6 +14,7 @@ import { ServiceComponent } from './shared/service/service.component';
 import { ReservationComponent } from './shared/reservation/reservation.component';
 import { MasterChefComponent } from './shared/master-chef/master-chef.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -25,13 +26,15 @@ import { SignupComponent } from './pages/signup/signup.component';
     ServiceComponent,
     ReservationComponent,
     MasterChefComponent,
-    SignupComponent
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
   ]
 })
