@@ -1,0 +1,11 @@
+ul{
+    border: 1px solid #000;
+    border-radius: 6px;
+}
+ul li a{
+    border-bottom: 1px solid #000;
+}
+ul li a:hover{
+    background-color: #0F1728;
+color: #fff !important;
+}
