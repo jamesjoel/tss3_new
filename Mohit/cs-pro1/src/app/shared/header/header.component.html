@@ -8,17 +8,39 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0 pe-4">
-            <a routerLink="/" class="nav-item nav-link" >Home</a>
-            <a routerLink="/signup" class="nav-item nav-link"routerLinkActive="active">signup</a>
-            <a routerLink="/login" class="nav-item nav-link"routerLinkActive="active">login</a>
+            <a routerLink="/" class="nav-item nav-link" routerLinkActivate="active" >Home</a>
+             
+            <ng-template [ngIf]="_auth.isLoggedIn()" [ngIfElse]="notLoggedIn">
+                <a routerLink="/profile" class="nav-item nav-link"routerLinkActive="active">Profile</a>
+                <a (click)="_auth.logout()" style="cursor: pointer;" class="nav-item nav-link"routerLinkActive="active">Logout</a>
+            </ng-template>   
+            <ng-template #notLoggedIn>
+                <a routerLink="/signup" class="nav-item nav-link"routerLinkActive="active">signup</a>
+                <a routerLink="/login" class="nav-item nav-link"routerLinkActive="active">login</a>
+            </ng-template>
+
+           
+
+
             <a routerLink="/contact" class="nav-item nav-link" routerLinkActive="active">Contact</a>
             <a routerLink="/about" class="nav-item nav-link" routerLinkActive="active">About</a>
+
             <a href="menu.html" class="nav-item nav-link">Menu</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">For Restaurent</a>
+
                 <div class="dropdown-menu m-0">
+                      
+                    <ng-template [ngIf]="_restoauth.isRestoLoggedIn()" [ngIfElse]="restoNotLoggedIn">
+                        <a routerLink="/resto/login" class="dropdown-item">Dashboard</a>
+                        <a (click)="_restoauth.logout()" href="#" class="dropdown-item">Logout</a>
+                    </ng-template>
+                    <ng-template #restoNotLoggedIn>
+
+                    
                     <a routerLink="/resto/login" class="dropdown-item">Login</a>
                     <a routerLink="/resto/signup" class="dropdown-item">Signup</a>
+                </ng-template>
                 </div>
             </div>
            
