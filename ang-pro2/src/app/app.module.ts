@@ -17,6 +17,7 @@ import { Home2Component } from './pages/home2/home2.component';
 import { ServicePageComponent } from './pages/service-page/service-page.component';
 import { TeacherComponent } from './pages/teacher/teacher.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
+import { FileUploadComponent } from './pages/file-upload/file-upload.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EmployeeComponent } from './pages/employee/employee.component';
     Home2Component,
     ServicePageComponent,
     TeacherComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,

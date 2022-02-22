@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <app-left-nav></app-left-nav>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <form [formGroup]="itemFrm">
+                    <div class="col-md-8 offset-md-2">  
+                    <h4 class="text-center">Add New items</h4>
+                    <div class="form-group">
+                        
+                        <label>Item Name</label>
+                        <input type="text" formControlName="name" [ngClass]="{'is-invalid' : checkFrm && itemFrm.controls.name.errors}" class="form-controls" />
+                    </div>
+                
+                    <div class="form-group">
+                        <label>Item price</label>
+                        <input type="text" formControlName="price" [ngClass]="{'is-invalid' : checkFrm && itemFrm.controls.Preice.errors}" class="form-controls" />
+                    </div>
+                    <div class="form-group">
+                        <label>Item Category</label>
+                        <select formControlName="Category" [ngClass]="{'is-invalid' : checkFrm && itemFrm.controls.category.errors}" class="form-control">
+                            <option>Select</option>
+                            <option *ngFor="let c of allCate">{{ c.name }}</option>
+                        </select>
+                        </div>
+                        <br />
+                        <br />
+                        <input (click)="submit()" type="submit" value="Add class=btn btn-primary" />
+                    </div>
+                    </form>
+                    
+            
+        
+    </div>
+</div>
+
+</div>
+
+                

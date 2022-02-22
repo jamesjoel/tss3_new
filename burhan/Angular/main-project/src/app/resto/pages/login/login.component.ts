@@ -11,7 +11,7 @@ import { RestoAuthService } from '../../services/restoauth.service';
 export class LoginComponent implements OnInit {
 
   loginFrm : FormGroup
-  checkFrm = false
+  checkFrm = false;
   errMsg = "";
 
   constructor(
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
       }
       if(err.error.type == 2)
       {
-        this.errMsg = "this username and password is incorrect";
+        this.errMsg = "this password is incorrect";
       }
     })
    

@@ -12,4 +12,10 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  demo(x:any){
+    // console.log(x);
+    let y = x.innerHTML;
+    console.log(y);
+  }
+
 }

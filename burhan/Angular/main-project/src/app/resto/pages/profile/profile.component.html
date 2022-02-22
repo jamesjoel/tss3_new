@@ -1,1 +1,32 @@
-<p>profile works!</p>
+<app-seprator></app-seprator>
+<div class="container" style="min-height: 550px;">
+<div class="row">
+    <h3>User Profile</h3>
+    <div class="col-md-6 offset-md-3">
+        <table *ngIf="userInfo" class="table table-borderd">
+            <tr>
+                <td>Full Name</td>
+                <td>{{ userInfo.fullname }}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{ userInfo.email }}</td>
+            </tr>
+            
+            <tr>
+                <td>Contact</td>
+                <td>{{ userInfo.contact }}</td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>{{ userInfo.gender }}</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>{{ userInfo.city }}</td>
+            </tr>
+        </table>
+    </div>
+    
+</div>
+</div>

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
+import { FileUploadComponent } from './pages/file-upload/file-upload.component';
 import { HelpComponent } from './pages/help/help.component';
 import { HomeComponent } from './pages/home/home.component';
 import { Home2Component } from './pages/home2/home2.component';
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path : "employee",
     component : EmployeeComponent
+  },
+  {
+    path : "file-upload",
+    component : FileUploadComponent
   }
 ];
 

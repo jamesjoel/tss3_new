@@ -4,6 +4,7 @@ import { DashComponent } from './pages/dash/dash.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { RestoComponent } from './resto.component';
+import { BackdoorGuard } from './guard/backdoor.guard';
 
 const routes: Routes = [
 {
@@ -20,7 +21,8 @@ const routes: Routes = [
     },
     {
       path : "dash",
-      component : DashComponent
+      component : DashComponent,
+      canActivate : [BackdoorGuard]
     }
   ]
 }  

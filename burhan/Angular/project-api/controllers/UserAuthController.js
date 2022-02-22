@@ -12,6 +12,7 @@ routes.post("/", (req, res)=>{
     var p = req.body.password;
     MongoClient.connect(database.dburl, (err, con)=>{
         var db = con.db(database.dbName);
+      
         db.collection(collName).find({ email : u }).toArray((err, result)=>{
             if(result.length == 1)
             {
