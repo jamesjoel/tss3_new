@@ -10,6 +10,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BackdoorGuard } from './guard/backdoor.guard';
 import { AntiBackdoorGuard } from './guard/anti-backdoor.guard';
+import { RestoSignupComponent } from './pages/resto-signup/resto-signup.component';
+import { RestoLoginComponent } from './pages/resto-login/resto-login.component';
+import { FileUploadComponent } from './pages/file-upload/file-upload.component';
 
 const routes: Routes = [
   {
@@ -43,6 +46,20 @@ const routes: Routes = [
         path : "profile",
         component : ProfileComponent,
         canActivate : [BackdoorGuard]
+      },
+      {
+        path : "resto-signup",
+        component : RestoSignupComponent,
+        canActivate : [AntiBackdoorGuard]
+      },
+      {
+        path : "resto-login",
+        component : RestoLoginComponent,
+        canActivate : [AntiBackdoorGuard]
+      },
+      {
+        path : "file-upload",
+        component : FileUploadComponent
       }
     ]
   }

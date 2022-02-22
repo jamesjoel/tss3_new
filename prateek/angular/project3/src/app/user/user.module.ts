@@ -14,6 +14,9 @@ import { UserComponent } from './user.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { RestoSignupComponent } from './pages/resto-signup/resto-signup.component';
+import { RestoLoginComponent } from './pages/resto-login/resto-login.component';
+import { FileUploadComponent } from './pages/file-upload/file-upload.component';
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import { ProfileComponent } from './pages/profile/profile.component';
     UserComponent,
     SignupComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    RestoSignupComponent,
+    RestoLoginComponent,
+    FileUploadComponent
   ],
   imports: [
     CommonModule,
