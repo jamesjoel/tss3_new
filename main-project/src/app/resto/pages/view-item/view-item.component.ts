@@ -15,6 +15,7 @@ export class ViewItemComponent implements OnInit {
     private _items : ItemsService
   ) { 
     this._items.getAll().subscribe(data=>{
+      console.log(data);
       this.allItems = data;
     })
   }

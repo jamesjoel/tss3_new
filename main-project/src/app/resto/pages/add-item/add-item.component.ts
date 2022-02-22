@@ -27,7 +27,8 @@ export class AddItemComponent implements OnInit {
     this.itemFrm = this._fb.group({
       name : ["", Validators.required],
       price : [null, Validators.required],
-      category : ["", Validators.required]
+      category : ["", Validators.required],
+      image : ["", Validators.required]
     })
 
 
@@ -36,15 +37,32 @@ export class AddItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit(){
+  submit(obj:any){
+    this.checkFrm = true;
     if(this.itemFrm.invalid){
-      this.checkFrm = true;
       return;
     }
-    this._items.save(this.itemFrm.value).subscribe(data=>{
-      // console.log(data);
-      this._router.navigate(["/resto/view-items"]);
-    })
+
+    let form = new FormData();
+    console.log(obj.files[0]);
+    // return;
+    if(obj.files[0].type == "image/jpeg" || obj.files[0].type=="image/png" || obj.files[0].type=="image/jpg"){
+      form.append("image", obj.files[0]);
+      form.append("formdata", JSON.stringify(this.itemFrm.value));
+      this._items.save(form).subscribe(data=>{
+      
+        this._router.navigate(["/resto/view-items"]);
+      })
+    }else{
+     
+      this.itemFrm.setErrors({ typeErr : true });
+      console.log(this.itemFrm.errors);
+      console.log(this.checkFrm);
+      return;
+    }
+    // if(obj.files)
+
+    
     
   }
 

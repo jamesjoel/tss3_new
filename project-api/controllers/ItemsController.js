@@ -5,6 +5,8 @@ const database = require("../config/database");
 const mongodb = require("mongodb");
 const MongoClient = mongodb.MongoClient;
 const collName = "items";
+const rand = require("random-string-gen");
+const path = require("path");
 
 routes.post("/", (req, res)=>{
    
@@ -13,12 +15,22 @@ routes.post("/", (req, res)=>{
         var obj = jwt.decode(token, database.uniqueStr);
    
         if(obj){
+            var formdata = JSON.parse(req.body.formdata);
+            var image = req.files.image;
+            var name = image.name;
+            var arr = name.split(".");
+            var ext = arr[arr.length - 1];
+            var newname = rand(20)+"."+ext;
+            formdata.image = newname;
+            
             var id = obj.id;
-            req.body.resto_id = id;
+            formdata.resto_id = id;
             MongoClient.connect(database.dbUrl, (err, con)=>{
                 var db = con.db(database.dbName);
-                db.collection(collName).insertOne(req.body, ()=>{
-                    res.status(200).json({ success : true });
+                db.collection(collName).insertOne(formdata, ()=>{
+                    image.mv(path.resolve()+"/assets/item-images/"+newname, ()=>{
+                        res.status(200).json({ success : true });
+                    });
                 })
             })
         }else{
@@ -120,7 +132,6 @@ routes.get("/all", (req, res)=>{
                     allData.push(x);
                     if(result.length == (n+1))
                     {
-                        
                         res.send(allData);
                         
                     }
