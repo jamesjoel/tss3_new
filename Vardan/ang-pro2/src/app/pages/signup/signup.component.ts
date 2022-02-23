@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup , FormBuilder , Validators, } from '@angular/forms';
 import { RequiredValidator } from '@angular/forms';
 import { SignupService } from 'src/app/services/signup.service';
-
+import { rePassCheck, numcheck, sizeCheck ,passCheck} from '../helper/custom.validation';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -24,9 +24,14 @@ export class SignupComponent implements OnInit {
         email : ["", [Validators.required, Validators.email]],
         password : ["",Validators.required],
         re_password : ["",Validators.required],
+        contact : ["",Validators.required],
         address : ["",Validators.required],
         city : ["",Validators.required],
         gender : ["",Validators.required]
+      },
+      {
+        validator
+         : [rePassCheck(), numcheck(), sizeCheck(), passCheck()]
       }
     );
   }
