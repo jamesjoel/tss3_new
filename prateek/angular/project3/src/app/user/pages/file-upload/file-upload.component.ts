@@ -27,8 +27,8 @@ export class FileUploadComponent implements OnInit {
     let form = new FormData();
     form.append("myfile", file);
     this._http.post<any>("http://localhost:3000/api/upload", form).subscribe(data=>{
-      console.log(data);
-      this.path = data.imagepath;
+      // console.log(data);
+      this.allImg.push(data);
     })
   }
 

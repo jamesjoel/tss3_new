@@ -18,7 +18,7 @@ app.get("/api/getimages", (req, res)=>{
         db.collection("images").find().toArray((err, result)=>{
             // res.send(result);
             var newresult = result.map(x=>{
-                x.imagepath = "http://localhost:3000/users/"+x.imagepath;
+                x.imagepath = "http://localhost:3000/users/"+x.imagename;
                 return x;
             })
             res.send(newresult);
@@ -35,7 +35,7 @@ app.post("/api/upload", (req, res)=>{
         var db = con.db("tss3");
         db.collection("images").insertOne({ imagename : name }, ()=>{
             file.mv(__dirname + "/assets/users/" + name, (err) => {
-                res.send({ success: true, imagepath: "http://localhost:3000/users/" + name });
+                res.send({ _id : "", imagename : name, imagepath: "http://localhost:3000/users/" + name });
 
             });
         })

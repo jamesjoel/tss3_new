@@ -1,7 +1,7 @@
 <div class="container mt-4" style="min-height: 500px;">
     <div class="row">
         <div class="colmd-12">
-            <h2>File Upload in Angular</h2>
+            <h2>File Upload</h2>
             <br />
             <br />
             Select File <input type="file" #file />
@@ -9,9 +9,10 @@
             <br />
             <button class="btn btn-primary" (click)="upload(file)">Upload</button>
             <br />
+            <br />
             <div class="row">
                 <div *ngFor=" let i of allImg" class="col-md-3">
-                     <img src="{{ i.imagepath }}" height="300px" />
+                     <img src="{{ i.imagepath }}" height="200" />
                 </div>
             </div>
         </div>
