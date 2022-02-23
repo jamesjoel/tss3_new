@@ -5,14 +5,36 @@ let mongodb = require("mongodb");
 let MongoClient = mongodb.MongoClient;
 let database = require("../config/database");
 let collName = "user";
+let rand = require("random-string-gen");
+let path = require("path");
 
 routes.post("/", (req, res)=>{
-    delete req.body.re_password;
-    req.body.password = sha1(req.body.password);
+    
+    var formdata = JSON.parse(req.body.formdata);
+    
+    delete formdata.re_password;
+    formdata.password = sha1(formdata.password);
+
+    
+    var image = req.files.picture;
+    var name = image.name;
+    var arr = name.split(".");
+    var ext = arr[arr.length - 1];
+    var newname = rand(20)+"."+ext;
+    formdata.pic = newname;
+
+
+
     MongoClient.connect(database.dbUrl, (err, con)=>{
         var db = con.db(database.dbName);
-        db.collection(collName).insertOne(req.body, (err)=>{
-            res.send({ success : true });
+        db.collection(collName).insertOne(formdata, (err)=>{
+            image.mv(path.resolve()+"/assets/user-images/"+newname, (err)=>{
+                if(err){
+                    console.log(err);
+                    return;
+                }
+                res.send({ success : true });
+            })
         })
     })
 })

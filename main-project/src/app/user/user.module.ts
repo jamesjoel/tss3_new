@@ -16,6 +16,7 @@ import { MasterChefComponent } from './shared/master-chef/master-chef.component'
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { BoxComponent } from './shared/box/box.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     MasterChefComponent,
     SignupComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    BoxComponent
   ],
   imports: [
     CommonModule,

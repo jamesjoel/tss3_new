@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <app-left-nav></app-left-nav>
+        </div>
+        <div class="col-md-9">
+            <table class="table table-info-borderd">
+                <tr>
+                    <th>S.NO</th>
+                    <th>Item Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                </tr>
+                <tr *ngFor="let c of allItems; let n = index">
+                    <td>{{ n+1 }}</td>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.price }}</td>
+                    <td>{{ i.category }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

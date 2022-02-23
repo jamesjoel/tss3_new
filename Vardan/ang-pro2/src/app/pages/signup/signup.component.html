@@ -53,11 +53,11 @@
                     <div class="form-group">
                         <label>City</label>
                         <select class="form-control"formControlName="city"  [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.city.errors}">
-                            <option>select</option>
-                            <option>Indore</option>
-                            <option>Pune</option>
-                            <option>Bhopal</option>
-                            <option>Gujrat</option>
+                            <option value="select">Select</option>
+                            <option value="indore">Indore</option>
+                            <option value="pune">Pune</option>
+                            <option value="bhopal">Bhopal</option>
+                            <option value="gujrat">Gujrat</option>
                         </select>
                         <div *ngIf= "checkForm && signupFrm.controls.city.errors" class="invalid-feedback">Insert your city</div>
                     </div>

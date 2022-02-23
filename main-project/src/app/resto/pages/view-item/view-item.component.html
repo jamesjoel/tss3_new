@@ -10,15 +10,33 @@
                     <th>Item Name</th>
                     <th>Price</th>
                     <th>Category</th>
+                    <th>Delete</th>
                 </tr>
                 <tr *ngFor="let i of allItems; let n = index">
                     <td>{{ n+1 }}</td>
                     <td>{{ i.name }}</td>
                     <td>{{ i.price }}</td>
                     <td>{{ i.category }}</td>
+                    <td><button (click)="askDelete(i)" data-bs-toggle="modal" data-bs-target="#delModal" class="btn btn-danger btn-sm">Delete</button></td>
                 </tr>
             </table>
         </Div>
     </div>
 </div>
 
+<div class="modal fade" id="delModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Delete Items !</h3>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure want to delete <b *ngIf="item">{{ item.name }}</b></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger btn-sm"  (click)="confDelete(closeBtn)">Delete</button>
+                <button data-bs-dismiss="modal" #closeBtn class="btn btn-dark btn-sm">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
