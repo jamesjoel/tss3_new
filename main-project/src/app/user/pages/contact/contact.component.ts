@@ -7,11 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  a="rohit";
-  color = ["red", "green", "blue"];
-  obj={
-    name : "Dheeraj"
-  };
+  name = "Gaurav Verma";
+  para = "sdfg sdfg sdfggtrg sdfv sergsdfbv serg sdfbv g zdfsbv serg sd";
   
 
   

@@ -1,11 +1,8 @@
 <app-saperator></app-saperator>
 <div class="container" style="min-height: 500px;">
-    <h2>Contact Page</h2>
-    <h3>{{ a }}</h3>
-    <p>{{ color[2] }}</p>
-    <h1>{{ obj.name }}</h1>
-
-    <Br />
-    <Br />
-    <button class="btn btn-success" (click)="demo()">OK</button>
+    <h1>This is Contact Page</h1>
+    <app-box 
+        [x]="name" 
+        [y]="para"
+    ></app-box>
 </div>

@@ -23,6 +23,11 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label>Profile Pic</label>
+                        <input type="file" #pic formControlName="pic" [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.pic.errors }" class="form-control" />
+                        
+                    </div>
+                    <div class="form-group">
                         <label>Password</label>
                         <input type="password" formControlName="password" [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.password.errors }" class="form-control" />
                         <div *ngIf="checkForm && signupFrm.controls.password.errors" class="invalid-feedback">Insert Your Password</div>
@@ -71,7 +76,7 @@
                     
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary" (click)="signup()">Signup</button>
+                    <button class="btn btn-primary" (click)="signup(pic)">Signup</button>
                 </div>
             </div>
             </form>

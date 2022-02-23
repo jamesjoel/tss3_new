@@ -129,6 +129,7 @@ routes.get("/all", (req, res)=>{
                 var id = mongodb.ObjectId(x.resto_id);
                 db.collection("resto").find({ _id : id }).toArray((err, result2)=>{
                     x.resto_name = result2[0].resto_name;
+                    x.imagepath = database.apiUrl+"/item-images/"+x.image;
                     allData.push(x);
                     if(result.length == (n+1))
                     {

@@ -6,7 +6,7 @@ const mongodb = require("mongodb");
 const MongoClient = mongodb.MongoClient;
 
 routes.get("/", (req, res)=>{
-    // console.log(req.headers);
+    
     if(req.headers.authorization){
         var token = JSON.parse(req.headers.authorization);
         var obj = jwt.decode(token, database.uniqueStr);
