@@ -37,11 +37,15 @@ export class ItemsService {
   }
 
   update(obj:any, id : any){
+    
     return this._http.put<any>(environment.apiUrl+"/api/items/"+id, obj, 
     {
       headers : {
         Authorization : JSON.stringify(localStorage.getItem("resto_token"))
       }
     });
+  }
+  getItem(id:any){
+    return this._http.get<any>(environment.apiUrl+"/api/items/"+id);
   }
 }

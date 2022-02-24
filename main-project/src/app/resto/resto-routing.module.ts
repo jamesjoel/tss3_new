@@ -10,6 +10,7 @@ import { AddCategoryComponent } from './pages/add-category/add-category.componen
 import { ViewCategoryComponent } from './pages/view-category/view-category.component';
 import { AddItemComponent } from './pages/add-item/add-item.component';
 import { ViewItemComponent } from './pages/view-item/view-item.component';
+import { EditItemComponent } from './pages/edit-item/edit-item.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,11 @@ const routes: Routes = [
       {
         path : "view-items",
         component : ViewItemComponent,
+        canActivate : [BackdoorGuard]
+      },
+      {
+        path : "edit-item/:id",
+        component : EditItemComponent,
         canActivate : [BackdoorGuard]
       }
     ]

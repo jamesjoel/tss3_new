@@ -14,6 +14,7 @@ import { AddCategoryComponent } from './pages/add-category/add-category.componen
 import { ViewCategoryComponent } from './pages/view-category/view-category.component';
 import { ViewItemComponent } from './pages/view-item/view-item.component';
 import { AddItemComponent } from './pages/add-item/add-item.component';
+import { EditItemComponent } from './pages/edit-item/edit-item.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AddItemComponent } from './pages/add-item/add-item.component';
     AddCategoryComponent,
     ViewCategoryComponent,
     ViewItemComponent,
-    AddItemComponent
+    AddItemComponent,
+    EditItemComponent
   ],
   imports: [
     CommonModule,

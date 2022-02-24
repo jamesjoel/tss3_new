@@ -11,6 +11,7 @@
                     <th>Price</th>
                     <th>Category</th>
                     <th>Delete</th>
+                    <th>Edit</th>
                 </tr>
                 <tr *ngFor="let i of allItems; let n = index">
                     <td>{{ n+1 }}</td>
@@ -18,6 +19,7 @@
                     <td>{{ i.price }}</td>
                     <td>{{ i.category }}</td>
                     <td><button (click)="askDelete(i)" data-bs-toggle="modal" data-bs-target="#delModal" class="btn btn-danger btn-sm">Delete</button></td>
+                    <td><a routerLink="/resto/edit-item/{{ i._id }}" class="btn btn-info btn-sm">Edit</a></td>
                 </tr>
             </table>
         </Div>

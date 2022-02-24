@@ -67,28 +67,27 @@ routes.delete("/:id", (req, res)=>{
     }
 })
 routes.put("/:id", (req, res)=>{
-    var id = req.params.id;
-   
-    if(req.headers.authorization){
-        var token = JSON.parse(req.headers.authorization);
-        var obj = jwt.decode(token, database.uniqueStr);
-   
-        if(obj){
-            
-            MongoClient.connect(database.dbUrl, (err, con)=>{
-                var db = con.db(database.dbName);
-                db.collection(collName).updateMany({ _id : mongodb.ObjectId(id)}, { $set : req.body } ,()=>{
-                    res.status(200).json({ success : true });
-                })
+    // console.log(req.body);
+    // return;
+    delete req.body._id;
+   if(req.headers.authorization){
+    var token = JSON.parse(req.headers.authorization);
+    var obj = jwt.decode(token, database.uniqueStr);
+    if(obj){
+        var objid = mongodb.ObjectId(req.params.id);
+        MongoClient.connect(database.dbUrl, (err, con)=>{
+            var db = con.db(database.dbName);
+            db.collection(collName).updateMany({ _id : objid}, { $set : req.body }, ()=>{
+                res.send({ success : true });
             })
-        }else{
-            
-            res.status(401).json({ success : false });
-        }
-
+        })
     }else{
         res.status(401).json({ success : false });
+
     }
+   }else{
+       res.status(401).json({ success : false });
+   }
 })
 routes.get("/", (req, res)=>{
     if(req.headers.authorization){
@@ -110,6 +109,17 @@ routes.get("/", (req, res)=>{
     }else{
         res.status(401).json({ success : false });
     }
+})
+
+
+routes.get("/:id", (req, res)=>{
+    var objid = mongodb.ObjectId(req.params.id);
+    MongoClient.connect(database.dbUrl, (err, con)=>{
+        var db = con.db(database.dbName);
+        db.collection(collName).find({ _id : objid }).toArray((err, result)=>{
+            res.send(result[0]);
+        })
+    })
 })
 
 
