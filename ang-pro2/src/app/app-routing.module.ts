@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
+import { ChildParentComponent } from './pages/child-parent/child-parent.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
 import { FileUploadComponent } from './pages/file-upload/file-upload.component';
@@ -48,6 +49,10 @@ const routes: Routes = [
   {
     path : "file-upload",
     component : FileUploadComponent
+  },
+  {
+    path : "childparent",
+    component : ChildParentComponent
   }
 ];
 

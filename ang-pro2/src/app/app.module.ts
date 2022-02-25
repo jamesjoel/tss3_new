@@ -18,6 +18,8 @@ import { ServicePageComponent } from './pages/service-page/service-page.componen
 import { TeacherComponent } from './pages/teacher/teacher.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
 import { FileUploadComponent } from './pages/file-upload/file-upload.component';
+import { ChildParentComponent } from './pages/child-parent/child-parent.component';
+import { ChildComponent } from './shared/child/child.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { FileUploadComponent } from './pages/file-upload/file-upload.component';
     ServicePageComponent,
     TeacherComponent,
     EmployeeComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    ChildParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
