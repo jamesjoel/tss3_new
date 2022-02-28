@@ -17,6 +17,8 @@ export class TeacherComponent implements OnInit {
 
   showMsg = false;
 
+  searchTxt = "";
+
   allTeacher:any[]=[];
   constructor(private _teacher : TeacherService) {
       this._teacher.getTeacher().subscribe(data=>{

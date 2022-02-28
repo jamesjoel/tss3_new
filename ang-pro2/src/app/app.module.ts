@@ -20,6 +20,10 @@ import { EmployeeComponent } from './pages/employee/employee.component';
 import { FileUploadComponent } from './pages/file-upload/file-upload.component';
 import { ChildParentComponent } from './pages/child-parent/child-parent.component';
 import { ChildComponent } from './shared/child/child.component';
+import { ProductComponent } from './pages/product/product.component';
+import { DiscountPipe } from './pipes/discount.pipe';
+import { BonusPipe } from './pipes/bonus.pipe';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { ChildComponent } from './shared/child/child.component';
     EmployeeComponent,
     FileUploadComponent,
     ChildParentComponent,
-    ChildComponent
+    ChildComponent,
+    ProductComponent,
+    DiscountPipe,
+    BonusPipe,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

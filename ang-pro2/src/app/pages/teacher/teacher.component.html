@@ -26,21 +26,29 @@
                     </div>
                 </div>
             </div>
+            <!-- return x.toLowerCase().includes(searchText); -->
             <div class="row mt-4">
+                <div class="col-md-8 offset-md-2">
+                    <!-- <p>{{ searchTxt }}</p> -->
+                <input type="text" [(ngModel)]="searchTxt" class="form-control" placeholder="Search Teacher Name"/>
+                <Br />
                 <table class="table table-dark">
                     <tr>
                         <th>S.No.</th>
                         <th>Name</th>
                         <th>Class</th>
                         <th>Salary</th>
+                        <th>Bonus</th>
                     </tr>
-                    <tr *ngFor="let t of allTeacher; let n = index">
-                        <td>{{ n+1 }}</td>
+                    <tr *ngFor="let t of allTeacher | search : searchTxt">
+                        <td>{{ 1 }}</td>
                         <td>{{ t.name }}</td>
                         <td>{{ t.class }}</td>
                         <td>{{ t.salary }}</td>
+                        <td>{{ t.salary | bonus : t.class | currency : '&#8377;'}}</td>
                     </tr>
                 </table>
+                </div>
             </div>
 
         </div>

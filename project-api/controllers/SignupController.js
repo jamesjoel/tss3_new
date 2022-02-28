@@ -23,6 +23,9 @@ routes.post("/", (req, res)=>{
     var newname = rand(20)+"."+ext;
     formdata.pic = newname;
 
+    // formdata.createdDate = new Date('15-12-2021');
+    // 2022-03-28 13:05:41
+    // 2022-12-15 00:00:00
 
 
     MongoClient.connect(database.dbUrl, (err, con)=>{
