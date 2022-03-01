@@ -1,0 +1,19 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Child to Parent Data Sharing</h4>
+            <br />
+            <h1>{{ a }}</h1>
+            <Br />
+            <Br />
+            <app-child (myEvent)="demo($event)" (myAction)="dataCome($event)"></app-child>
+
+            <br />
+            <Br />
+            <h3>{{ test.name }}</h3>
+            <h3>{{ test.age }}</h3>
+            <h3>{{ test.city }}</h3>
+
+        </div>
+    </div>
+</div>

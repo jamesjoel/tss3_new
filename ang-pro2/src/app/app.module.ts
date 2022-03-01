@@ -24,6 +24,8 @@ import { ProductComponent } from './pages/product/product.component';
 import { DiscountPipe } from './pipes/discount.pipe';
 import { BonusPipe } from './pipes/bonus.pipe';
 import { SearchPipe } from './pipes/search.pipe';
+import { H1Component } from './shared/h1/h1.component';
+import { HelloDirective } from './directives/hello.directive';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { SearchPipe } from './pipes/search.pipe';
     ProductComponent,
     DiscountPipe,
     BonusPipe,
-    SearchPipe
+    SearchPipe,
+    H1Component,
+    HelloDirective
   ],
   imports: [
     BrowserModule,
