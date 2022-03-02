@@ -8,6 +8,7 @@ import { FileUploadComponent } from './pages/file-upload/file-upload.component';
 import { HelpComponent } from './pages/help/help.component';
 import { HomeComponent } from './pages/home/home.component';
 import { Home2Component } from './pages/home2/home2.component';
+import { ImageComponent } from './pages/image/image.component';
 import { ProductComponent } from './pages/product/product.component';
 import { ServicePageComponent } from './pages/service-page/service-page.component';
 import { TeacherComponent } from './pages/teacher/teacher.component';
@@ -58,6 +59,10 @@ const routes: Routes = [
   {
     path : "product",
     component : ProductComponent
+  },
+  {
+    path : "image",
+    component : ImageComponent
   }
 ];
 

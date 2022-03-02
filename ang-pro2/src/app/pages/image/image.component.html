@@ -1,0 +1,29 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h3 class="text-center">File Upload With Validation</h3>
+            <form [formGroup]="myForm">
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" formControlName="name" [ngClass]="{'is-invalid' : checkForm && myForm.controls.name.errors }" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="">Contact</label>
+                <input type="text" formControlName="contact" [ngClass]="{'is-invalid' : checkForm && myForm.controls.contact.errors }" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="">Image</label>
+                <input type="file" #image formControlName="image" [ngClass]="{'is-invalid' : checkForm && myForm.controls.image.errors }" class="form-control" />
+                <div *ngIf="checkForm && myForm.controls.image.errors" class="invalid-feedback">
+                    <div *ngIf="myForm.controls.image.errors.required">Select Image</div>
+                    <div *ngIf="myForm.controls.image.errors.typeErr">Image Type Error</div>
+                    <div *ngIf="myForm.controls.image.errors.sizeErr">Image Size Error</div>
+                </div>
+            </div>
+            <br />
+            <Br />
+            <button class="btn btn-primary" (click)="submit(image)">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

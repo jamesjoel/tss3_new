@@ -31,14 +31,14 @@ export class SignupComponent implements OnInit {
     ) {
     this.signupFrm = this._fb.group(
       { // this is controls name
-        fullname : ["", Validators.required],
-        email : ["", [Validators.required, Validators.email]],
-        password : ["", Validators.required],
-        re_password : ["", Validators.required],
-        address : ["", Validators.required],
-        gender : ["", Validators.required],
-        city : ["", Validators.required],
-        contact : ["", Validators.required],
+        fullname : [""],
+        email : [""],
+        password : [""],
+        re_password : [""],
+        address : [""],
+        gender : [""],
+        city : [""],
+        contact : [""],
         pic : ["", Validators.required]
       },
       {
@@ -61,12 +61,33 @@ export class SignupComponent implements OnInit {
       this.checkForm = true;
       return;
     }
-    var form = new FormData();
-    form.append("picture", obj.files[0]);
-    form.append("formdata", JSON.stringify(this.signupFrm.value));
-    this._signup.save(form).subscribe(res=>{
-      this._router.navigate(["/login"]);
-    })
+    if(this.signupFrm.controls.pic){
+      this.checkForm = true;
+      
+      if(obj.files[0].type == "image/jpg" || obj.files[0].type =="image/png" || obj.files[0].type=="image/jpeg" || obj.files[0].type=="image/gif"){
+      
+        
+      
+      if(obj.files[0].size <= (1024*1024*2)){
+        var form = new FormData();
+        form.append("picture", obj.files[0]);
+        form.append("formdata", JSON.stringify(this.signupFrm.value));
+        this._signup.save(form).subscribe(res=>{
+        this._router.navigate(["/login"]);
+        })
+        
+      }else{
+        this.signupFrm.controls.pic.setErrors({ sizeErr : true });
+        return;
+      }
+    }else{
+      this.signupFrm.controls.pic.setErrors({ typeErr : true });
+        return;
+    }
+  }
+
+
+    
   }
 
 }

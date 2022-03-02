@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +28,7 @@ import { BonusPipe } from './pipes/bonus.pipe';
 import { SearchPipe } from './pipes/search.pipe';
 import { H1Component } from './shared/h1/h1.component';
 import { HelloDirective } from './directives/hello.directive';
+import { ImageComponent } from './pages/image/image.component';
 
 @NgModule({
   declarations: [
@@ -48,13 +51,15 @@ import { HelloDirective } from './directives/hello.directive';
     BonusPipe,
     SearchPipe,
     H1Component,
-    HelloDirective
+    HelloDirective,
+    ImageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

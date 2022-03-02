@@ -25,7 +25,11 @@
                     <div class="form-group">
                         <label>Profile Pic</label>
                         <input type="file" #pic formControlName="pic" [ngClass]="{'is-invalid' : checkForm && signupFrm.controls.pic.errors }" class="form-control" />
-                        
+                        <div *ngIf="checkForm && signupFrm.controls.pic.errors" class="invalid-feedback">
+                            <div *ngIf="signupFrm.controls.pic.errors.required">Select Pic</div>
+                            <div *ngIf="signupFrm.controls.pic.errors.typeErr">Type</div>
+                            <div *ngIf="signupFrm.controls.pic.errors.sizeErr">Size</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
