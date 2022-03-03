@@ -10,7 +10,13 @@ app.use(express.urlencoded({ extended : true }));
 app.use(cors());
 app.use(upload());
 
+
+
 app.use(routes);
+
+app.get("*", (req, res)=>{
+    res.sendFile(__dirname+"/index.html");
+});
 
 
 

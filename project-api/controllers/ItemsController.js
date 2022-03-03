@@ -112,20 +112,6 @@ routes.get("/", (req, res)=>{
 })
 
 
-routes.get("/:id", (req, res)=>{
-    var objid = mongodb.ObjectId(req.params.id);
-    MongoClient.connect(database.dbUrl, (err, con)=>{
-        var db = con.db(database.dbName);
-        db.collection(collName).find({ _id : objid }).toArray((err, result)=>{
-            res.send(result[0]);
-        })
-    })
-})
-
-
-
-
-
 
 
 
@@ -153,7 +139,15 @@ routes.get("/all", (req, res)=>{
     })
 })
 
-
+routes.get("/:id", (req, res)=>{
+    var objid = mongodb.ObjectId(req.params.id);
+    MongoClient.connect(database.dbUrl, (err, con)=>{
+        var db = con.db(database.dbName);
+        db.collection(collName).find({ _id : objid }).toArray((err, result)=>{
+            res.send(result[0]);
+        })
+    })
+})
 
 
 module.exports = routes;
