@@ -1,16 +1,16 @@
 let express = require("express");
 let app = express();
 let cors = require("cors");
+const { MongoClient } = require("mongodb");
 let routes = require("./config/routes");
 let upload = require("express-fileupload");
-const { MongoClient } = require("mongodb");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname+"/assets"));
 app.use(cors());
-app.use(routes);
 app.use(upload());
+app.use(routes);
 
 app.get("/api/getimages", (req, res)=>{
     MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
