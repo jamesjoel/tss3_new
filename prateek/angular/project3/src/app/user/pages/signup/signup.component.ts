@@ -10,8 +10,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
-
   signupFrm:FormGroup;
   checkForm = false;
 
@@ -29,7 +27,8 @@ export class SignupComponent implements OnInit {
         address: ["", Validators.required],
         gender: ["", Validators.required],
         city: ["", Validators.required],
-        contact: ["", Validators.required]
+        contact: ["", Validators.required],
+        pic: ["", Validators.required]
       }
     )
    }
@@ -37,14 +36,17 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  signup(){
+  signup(obj:any){
   if(this.signupFrm.invalid){
 
     this.checkForm = true;
     return;
   }
-   this._signup.save(this.signupFrm.value).subscribe(data=>{
-     console.log(data);
+   var form = new FormData();
+   form.append("picture", obj.files[0]);
+   form.append("FormData", JSON.stringify(this.signupFrm.value));
+   this._signup.save(form).subscribe(res=>{
+     this._router.navigate(["/login"]);
    })
   }
 }

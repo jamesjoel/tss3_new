@@ -1,5 +1,85 @@
-<div class="container"  style="min-height: 500px;">
+<!-- <div class="container mt-4"  style="min-height: 500px;">
     <div class="row">
         <h3>User Profile</h3>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Full Name</td>
+                            <td>{{ userInfo.fullname }}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>{{ userInfo.email }}</td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>{{ userInfo.gender }}</td>
+                        </tr>
+                        <tr>
+                            <td>Contact</td>
+                            <td>{{ userInfo.contact }}</td>
+                        </tr>
+                        <tr>
+                            <td>City</td>
+                            <td>{{ userInfo.city }}</td>
+                        </tr>
+                        <tr>
+                            <td>Pic</td>
+                            <td>{{ userInfo.pic }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
     </div>
-</div>
+</div> -->
+
+
+
+<section class="vh-100" style="background-color: #f4f5f7;">
+    <div class="container py-5 h-100">
+        <h3>User Profile</h3>
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-lg-6 mb-4 mb-lg-0">
+                <div class="card mb-3" style="border-radius: .5rem;">
+                    <div class="row g-0">
+                        
+                        <div class="col-md-4 gradient-custom text-center text-white"
+                            style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                            <img src="{{ userImg }}" alt="Avatar" class="img-fluid my-5" style="width: 200px; height: 100px; background-color: black;" />
+                            <i class="far fa-edit mb-5"></i>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body p-4">
+                                <tr>
+                                    <td>Full Name :-</td>
+                                    <td>{{ userInfo.fullname }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Email :-</td>
+                                    <td>{{ userInfo.email }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Gender :-</td>
+                                    <td>{{ userInfo.gender }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Contact :-</td>
+                                    <td>{{ userInfo.contact }}</td>
+                                </tr>
+                                <tr>
+                                    <td>City :-</td>
+                                    <td>{{ userInfo.city }}</td>
+                                </tr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
