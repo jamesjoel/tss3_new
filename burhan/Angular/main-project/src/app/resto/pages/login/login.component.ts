@@ -33,12 +33,14 @@ export class LoginComponent implements OnInit {
       this.checkFrm = true;
       return;
     }
-    this._auth.do_login(this.loginFrm).subscribe(data=>{
-      // console.log(data);
+    this._auth.do_login(this.loginFrm.value).subscribe(data=>{
+      console.log(data);
       localStorage.setItem("resto_token", data.token);
       this._router.navigate(["/resto/dashboard"]);
     },
     err=>{
+      console.log(err);
+      return;
       if(err.error.type == 1)
       {
         this.errMsg = "this username and password is incorrect";

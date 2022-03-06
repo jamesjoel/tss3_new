@@ -8,6 +8,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { UserComponent } from './user.component';
+import { FileUploadComponent } from './pages/file-upload/file-upload.component';
 
 
 
@@ -19,6 +20,7 @@ import { UserComponent } from './user.component';
     HeaderComponent,
     FooterComponent,
     UserComponent,
+    FileUploadComponent,
     
   ],
   imports: [

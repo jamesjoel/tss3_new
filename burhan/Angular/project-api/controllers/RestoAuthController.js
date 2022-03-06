@@ -10,7 +10,9 @@ let jwt = require("jsonwebtoken");
 routes.post("/", (req, res)=>{
     var u = req.body.username;
     var p = req.body.password;
-    MongoClient.connect(database.dburl, (err, con)=>{
+    MongoClient.connect(database.dbUrl, (err, con)=>{
+        // console.log(err);
+        // return;
         var db = con.db(database.dbName);
         db.collection(collName).find({ username : u }).toArray((err, result)=>{
             if(result.length == 1)

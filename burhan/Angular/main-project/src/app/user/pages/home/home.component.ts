@@ -7,10 +7,14 @@ import { ItemsService } from '../../services/items.service'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-allItems : any;
+allItems : any[]=[];
   constructor(
     private _items : ItemsService
-  ) { }
+  ) {
+    this._items.getAll().subscribe(data=>{
+      this.allItems = data;
+    })
+   }
 
   ngOnInit(): void {
   }

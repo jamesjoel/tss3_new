@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ItemsService } from '../../services/items.service';
+// import { ItemsService } from '../../services/items.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class AddItemComponent implements OnInit {
 
-  allCate : any;
+  allCate : any[]=[];
   itemFrm : FormGroup;
   checkFrm = false;
 
@@ -40,7 +41,7 @@ export class AddItemComponent implements OnInit {
     }
     this._items.save(this.itemFrm.value).subscribe(data=>{
       // console.log(data);
-      this._router.navigate(["/resto//view.items"]);
+      this._router.navigate(["/resto/view.items"]);
     })
   }
 }

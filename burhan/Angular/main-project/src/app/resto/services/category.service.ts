@@ -25,4 +25,11 @@ export class CategoryService {
       }
     })
   }
+  delete(id:any){
+    return this._http.delete<any>(environment.apiurl+"/api/category/"+id, {
+      headers : {
+        Authorization : JSON.stringify(localStorage.getItem("resto_token"))
+  }
+})
+}
 }

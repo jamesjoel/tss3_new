@@ -1,21 +1,20 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
             <app-left-nav></app-left-nav>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-6">
             <h4>Add New Category</h4>
-            <div class="form-group mt-3">
+            <div class="form-group mt-2">
                 <div class="row">
                     <div class="col-md-5 offset-md-2">
                         <form [formGroup]="cateFrm">
-                        <div class="form-group mt-4">
+                        <div class="form-group mt-1">
                             <label>Menu Name</label>
                             <input type="text" formControlName="name" [ngClass]="{'is-invalid' : checkFrm && cateFrm.controls.errors}" class="form-controls" />
                         </div>
                         <br />
-                        <br />
-                        <input (click)="submit()" type="submit" value="Add class=btn btn-primary" />
+                       <input (click)="submit()" type="submit" value="Add" class="btn btn-primary" />
                     </form>
                     </div>
                 </div>
