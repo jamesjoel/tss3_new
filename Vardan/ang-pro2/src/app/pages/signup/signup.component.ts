@@ -3,6 +3,7 @@ import { FormGroup , FormBuilder , Validators, } from '@angular/forms';
 import { RequiredValidator } from '@angular/forms';
 import { SignupService } from 'src/app/services/signup.service';
 import { rePassCheck, numcheck, sizeCheck ,passCheck} from '../helper/custom.validation';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -15,7 +16,8 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private _fb: FormBuilder,
-    private _signups : SignupService
+    private _signups : SignupService,
+    private _router : Router
     )
    { 
     this.signupFrm= this._fb.group(
@@ -45,8 +47,12 @@ export class SignupComponent implements OnInit {
       return;
     }
     this._signups.save(this.signupFrm.value).subscribe(data=>{
-      console.log(data);
+      console.log(this.signupFrm.value)
+        this._router.navigate(["/login"]);
+      
     })
+
+    
   }
 
 }

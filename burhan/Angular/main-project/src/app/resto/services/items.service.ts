@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService {
+export class ItemsService {
 
 
   constructor(
@@ -25,4 +25,23 @@ export class CategoryService {
       }
     })
   }
+  delete(id:any){
+    return this._http.delete<any>(environment.apiurl+"/api/items/"+id,
+    {
+      headers : {
+        Authorization : JSON.stringify(localStorage.getItem("resto_token"))
+      }
+    });
 }
+  update(obj:any, id : any){
+    return this._http.put<any>(environment.apiurl+"/api/items/"+id, obj,
+    {
+      headers : {
+        Authorization : JSON.stringify(localStorage.getItem("resto_token"))
+      }
+    });
+    
+  }
+}
+  
+

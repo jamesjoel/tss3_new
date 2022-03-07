@@ -11,13 +11,31 @@
                         <tr>
                             <th>S.No</th>
                             <th>Name</th>
+                            <th>Delete</th>
                         </tr>
                         <tr *ngFor="let c of allCate; let n = index">
                             <td>{{ n+1 }}</td>
                             <td>{{ c.name }}</td>
+                            <td><button (click)="askDelete(c)" data-bs-target="#delmodal" data-bs-toggle="modal" class="btn btn-danger">Delete</button></td>
                         </tr>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="delmodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Delete Category</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you want to delete<b *ngIf="cate">{{ cate.name }}</b></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark" #delBtn data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-danger" (click)="confDelete(delBtn)" >Delete</button>
             </div>
         </div>
     </div>

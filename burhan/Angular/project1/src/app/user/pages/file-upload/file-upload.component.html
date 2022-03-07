@@ -1,0 +1,19 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12 offset-5">
+            <h3>File Upload In Angular</h3>
+            <br/>
+            <br/>
+            Select file <input type="file" #file/>
+            <br/>
+            <br/>
+            <button class="btn btn-danger" (click)="upload(file)">Upload</button>
+            <br />
+           <div class="row">
+               <div *ngFor="let i of allImg" class="col-md3">
+                   <img src="{{ i.imagepath }}" height="200" />
+               </div>
+           </div>
+        </div>
+    </div>
+</div>
