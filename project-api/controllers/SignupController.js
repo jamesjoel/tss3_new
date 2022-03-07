@@ -2,6 +2,8 @@ let express = require("express");
 let routes = express.Router();
 let sha1 = require("sha1");
 let mongodb = require("mongodb");
+let ServerApiVersion = require("mongodb");
+
 let MongoClient = mongodb.MongoClient;
 let database = require("../config/database");
 let collName = "user";
@@ -28,17 +30,38 @@ routes.post("/", (req, res)=>{
     // 2022-12-15 00:00:00
 
 
-    MongoClient.connect(database.dbUrl, (err, con)=>{
-        var db = con.db(database.dbName);
+    // MongoClient.connect(database.dbUrl, (err, con)=>{
+    //     var db = con.db(database.dbName);
+    //     db.collection(collName).insertOne(formdata, (err)=>{
+    //         image.mv(path.resolve()+"/assets/user-images/"+newname, (err)=>{
+    //             if(err){
+    //                 console.log(err);
+    //                 return;
+    //             }
+    //             res.send({ success : true });
+    //         })
+    //     })
+    // })
+    const client = new MongoClient(database.dbUrl, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: mongodb.v1 });
+    client.connect(err=>{
+        if(err){
+            console.log("----------", err);
+            return;
+        }
+        var db = client.db(database.dbName);
         db.collection(collName).insertOne(formdata, (err)=>{
-            image.mv(path.resolve()+"/assets/user-images/"+newname, (err)=>{
-                if(err){
-                    console.log(err);
-                    return;
-                }
-                res.send({ success : true });
-            })
-        })
+            if(err){
+                console.log("**********", err);
+                return
+            }
+                    image.mv(path.resolve()+"/assets/user-images/"+newname, (err)=>{
+                        if(err){
+                            console.log(err);
+                            return;
+                        }
+                        res.send({ success : true });
+                    })
+                })
     })
 })
 
