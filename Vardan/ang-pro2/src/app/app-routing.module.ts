@@ -8,6 +8,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ServicePageComponent } from './pages/service-page/service-page.component';
 import { LoginComponent } from './pages/login/login.component';
+import { BackdoorGuard } from './guard/backdoor.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { AntibackdoorGuard } from './guard/antibackdoor.guard';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 
 
@@ -26,19 +30,31 @@ const routes: Routes = [
     path : "contact",
     component : ContactComponent
   },
+  {
+    path : "fileupload",
+    component : FileUploadComponent
+  },
  
   {
     path :"service-page",
     component : ServicePageComponent
+    
+  },
+  {
+    path :"profile",
+    component : ProfileComponent,
+    canActivate :[BackdoorGuard]
   },
   {
     path :"login",
-    component : LoginComponent
+    component : LoginComponent,
+    canActivate : [AntibackdoorGuard]
   },
   
   {
     path : "signup",
-    component : SignupComponent
+    component : SignupComponent,
+    canActivate : [AntibackdoorGuard]
   }
 ];
 

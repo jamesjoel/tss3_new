@@ -19,6 +19,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ServicePageComponent } from './pages/service-page/service-page.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { LoginComponent } from './pages/login/login.component';
     FooterComponent,
     ServicePageComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent,
+    FileUploadComponent
     
   ],
   imports: [
