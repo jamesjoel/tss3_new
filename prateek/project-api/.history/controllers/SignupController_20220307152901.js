@@ -56,6 +56,18 @@ routes.post("/", (req, res)=>{
     })
 })
 
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost:27017/";
+
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var db = db.db("tss3");
+//   dbo.collection("user").find({}).toArray(function(err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//     db.close();
+//   });
+// });
 
 
 

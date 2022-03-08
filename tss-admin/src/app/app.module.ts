@@ -10,6 +10,7 @@ import { DashboardInfoComponent } from './shared/dashboard-info/dashboard-info.c
 import { TransactionHistoryComponent } from './shared/transaction-history/transaction-history.component';
 import { MessageBarComponent } from './shared/message-bar/message-bar.component';
 import { JoinedComponent } from './pages/joined/joined.component';
+import { EnquariesComponent } from './pages/enquaries/enquaries.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { JoinedComponent } from './pages/joined/joined.component';
     DashboardInfoComponent,
     TransactionHistoryComponent,
     MessageBarComponent,
-    JoinedComponent
+    JoinedComponent,
+    EnquariesComponent
   ],
   imports: [
     BrowserModule,
