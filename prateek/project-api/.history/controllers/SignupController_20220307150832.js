@@ -7,17 +7,6 @@ let database = require("../config/database");
 let collName = "user";
 let rand = require("random-string-gen");
 let path = require("path");
-routes.get("/demo", (req, res)=>{
-    MongoClient.connect(database.dbUrl, (err, con)=>{
-        console.log(err);
-        var db = con.db(database.dbName);
-        db.collection(collName).find().toArray((err, result)=>{
-            res.send(result);
-        })
-    })
-})
-
-
 
 routes.post("/", (req, res)=>{
     // console.log(req.body.FormData);
@@ -56,6 +45,18 @@ routes.post("/", (req, res)=>{
     })
 })
 
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost:27017/";
+
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var db = db.db("tss3");
+//   dbo.collection("user").find({}).toArray(function(err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//     db.close();
+//   });
+// });
 
 
 
