@@ -17,10 +17,10 @@ routes.get("/", (req, res) => {
             MongoClient.connect(database.dbUrl, (err, con) => {
                 var db = con.db(database.dbName);
                 db.collection("user").find({ _id: id }).toArray((err, result) => {
-                     console.log(result);
-                     return
+                    // console.log(result);
+                    // return
                     user = {
-                        
+                
                         imagepath: "http://localhost:3000/profile/" + result[0].pic
                     }
 

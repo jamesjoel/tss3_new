@@ -10,7 +10,11 @@ import { DashboardInfoComponent } from './shared/dashboard-info/dashboard-info.c
 import { TransactionHistoryComponent } from './shared/transaction-history/transaction-history.component';
 import { MessageBarComponent } from './shared/message-bar/message-bar.component';
 import { JoinedComponent } from './pages/joined/joined.component';
+<<<<<<< HEAD
 import { OtherComponent } from './pages/other/other.component';
+=======
+import { EnquariesComponent } from './pages/enquaries/enquaries.component';
+>>>>>>> a2fa67bd11d11d8193db77974d4000936f4ecc9d
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { OtherComponent } from './pages/other/other.component';
     TransactionHistoryComponent,
     MessageBarComponent,
     JoinedComponent,
+<<<<<<< HEAD
     OtherComponent
+=======
+    EnquariesComponent
+>>>>>>> a2fa67bd11d11d8193db77974d4000936f4ecc9d
   ],
   imports: [
     BrowserModule,
