@@ -21,13 +21,7 @@
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>
-                            <div class="form-check form-check-muted m-0">
-                              <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input">
-                              </label>
-                            </div>
-                          </th>
+                          <th> S.No</th>
                           <th> Student Name </th>
                           <th> Student Id </th>
                           
@@ -38,25 +32,20 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
+                        <tr *ngFor="let stu of student ;let n= index">
+                         
+                          <td>{{n+1}}</td>
                           <td>
-                            <div class="form-check form-check-muted m-0">
-                              <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input">
-                              </label>
-                            </div>
+                            <img src={{stu.image}} alt="image" />
+                            <span class="pl-2">{{stu.name}}</span>
                           </td>
-                          <td>
-                            <img src="assets/images/faces/face1.jpg" alt="image" />
-                            <span class="pl-2">Henry Klein</span>
-                          </td>
-                          <td> 1215 </td>
+                          <td> {{stu.id}} </td>
                           
-                          <td> Male </td>
+                          <td> {{stu.gender}}</td>
                           
-                          <td> 04 Dec 2019 </td>
+                          <td>{{stu.date}}</td>
                           <td>
-                            <div class="badge badge-outline-success">Approved</div>
+                            <div class="badge badge-outline-{{stu.class}}">{{stu.status}}</div>
                           </td>
                         </tr>
                         
