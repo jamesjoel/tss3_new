@@ -1,0 +1,79 @@
+<div class="container-scroller">
+    <!-- partial:partials/_sidebar.html -->
+    <app-navbar></app-navbar>
+    
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      
+      <app-top-navbar></app-top-navbar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+        
+          
+          
+          
+          <div class="row ">
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Order Status</h4>
+                  <div class="table-responsive">
+                    <table class="table">
+                    <tr>
+                          <th>
+                            <div class="form-check form-check-muted m-0">
+                              <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input">
+                              </label>
+                            </div>
+                          </th>
+                          <th> S.No</th>
+                          <th> Student Name </th>
+                          <th> Student ID </th>
+                          <th> Gender </th>
+                          <th> Date </th>
+                          <th> Status </th>       
+                    </tr>
+                    <tr *ngFor ="let stu of students; let n = index">
+                        <td>
+                          <div class="form-check form-check-muted m-0">
+                            <label class="form-check-label">
+                              <input type="checkbox" class="form-check-input">
+                            </label>
+                          </div>
+                        </td>
+                        <td> {{n+1}}</td>
+                        <td>
+                          <img src="assets/images/faces/face4.jpg" alt="image" />
+                          <span  class="pl-2">{{stu.name}}</span>
+                        </td>
+                        <td> {{stu.id}} </td>
+                        <td>{{ stu.gender}} </td>
+                        <td>{{ stu.date}} </td>
+                       
+                        <td><div class="badge badge-outline-{{stu.class}}">{{stu.status}}</div></td>
+                        
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>

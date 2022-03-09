@@ -10,6 +10,10 @@ import { DashboardInfoComponent } from './shared/dashboard-info/dashboard-info.c
 import { TransactionHistoryComponent } from './shared/transaction-history/transaction-history.component';
 import { MessageBarComponent } from './shared/message-bar/message-bar.component';
 import { JoinedComponent } from './pages/joined/joined.component';
+<<<<<<< HEAD
+=======
+import { OtherComponent } from './pages/other/other.component';
+>>>>>>> c0db071ff2bd05026cc50dd61a06185851964c0a
 import { EnquariesComponent } from './pages/enquaries/enquaries.component';
 
 @NgModule({
@@ -22,6 +26,10 @@ import { EnquariesComponent } from './pages/enquaries/enquaries.component';
     TransactionHistoryComponent,
     MessageBarComponent,
     JoinedComponent,
+<<<<<<< HEAD
+=======
+    OtherComponent,
+>>>>>>> c0db071ff2bd05026cc50dd61a06185851964c0a
     EnquariesComponent
   ],
   imports: [
