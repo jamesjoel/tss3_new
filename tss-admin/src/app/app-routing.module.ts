@@ -15,13 +15,12 @@ const routes: Routes = [
     component : JoinedComponent
   },
   {
-<<<<<<< HEAD
-    path : "other",
-    component : OtherComponent
-=======
     path : "enquaries",
     component : EnquariesComponent
->>>>>>> a2fa67bd11d11d8193db77974d4000936f4ecc9d
+  },
+  {
+    path : "other",
+    component : OtherComponent
   }
 ];
 
