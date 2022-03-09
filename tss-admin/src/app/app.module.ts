@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { MessageBarComponent } from './shared/message-bar/message-bar.component'
 import { JoinedComponent } from './pages/joined/joined.component';
 import { OtherComponent } from './pages/other/other.component';
 import { EnquariesComponent } from './pages/enquaries/enquaries.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,14 @@ import { EnquariesComponent } from './pages/enquaries/enquaries.component';
     MessageBarComponent,
     JoinedComponent,
     OtherComponent,
-    EnquariesComponent
+    EnquariesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
