@@ -151,8 +151,8 @@
         <li class="nav-item dropdown">
           <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
             <div class="navbar-profile">
-              <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="">
-              <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
+              <img class="img-xs rounded-circle" src="assets/images/faces/jj.jpeg" alt="">
+              <p class="mb-0 d-none d-sm-block navbar-profile-name">James Joel</p>
               <i class="mdi mdi-menu-down d-none d-sm-block"></i>
             </div>
           </a>
@@ -166,7 +166,8 @@
                 </div>
               </div>
               <div class="preview-item-content">
-                <p class="preview-subject mb-1">Settings</p>
+                <!-- <p class="preview-subject mb-1">Settings</p> -->
+                <a class="preview-subject mb-1 nav-link">Settings</a>
               </div>
             </a>
             <div class="dropdown-divider"></div>
@@ -177,7 +178,15 @@
                 </div>
               </div>
               <div class="preview-item-content">
-                <p class="preview-subject mb-1">Log out</p>
+               
+                <ng-template [ngIf]= "_auth.isloggedIn()" [ngIfElse]="notloggedIn">
+                  <a class="preview-subject mb-1 nav-link" (click)="_auth.logout()">Logout</a>
+                    
+                  
+                </ng-template>
+                <ng-template #notloggedIn>
+                  <a routerLink ="/login"  class=" nav-link">Login</a>   
+                </ng-template>
               </div>
             </a>
             <div class="dropdown-divider"></div>
@@ -190,3 +199,25 @@
       </button>
     </div>
   </nav>
+
+
+
+  <!-- <li class="nav-item menu-items">
+    <a class="nav-link">
+      <span class="menu-icon">
+        <i class="mdi mdi-logout text-danger"></i>
+      </span>
+      <span class="menu-title">Logout</span>
+      <ng-template [ngIF]= "_login.isLogged_In()" [ngIfElse]=" notLoggedIn">
+        <a routerLink ="/dashboard" class="nav-item nav-link">Dashboard
+        </a>
+        <a  (click)="_auth.logout()" class="nav-link">Logout
+        </a>
+      </ng-template>
+      <ng-template #notLoggedIn>
+        <a routerLink ="/login"  class=" nav-link">Login
+        </a>   
+      </ng-template>
+
+    </a>
+  </li> -->

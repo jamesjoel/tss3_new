@@ -7,7 +7,9 @@ const dbName = "tss-admin";
 
 module.exports = {
     dbName : dbName,
-    con : client
+    con : client,
+    uniqueStr : "tssadmin"
+    
 }
 
 /*
