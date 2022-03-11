@@ -13,6 +13,7 @@ import { AntiBackdoorGuard } from './guard/anti-backdoor.guard';
 import { RestoSignupComponent } from './pages/resto-signup/resto-signup.component';
 import { RestoLoginComponent } from './pages/resto-login/resto-login.component';
 import { FileUploadComponent } from './pages/file-upload/file-upload.component';
+import { ServiceComponent } from './pages/service/service.component';
 
 const routes: Routes = [
   {
@@ -60,6 +61,10 @@ const routes: Routes = [
       {
         path : "file-upload",
         component : FileUploadComponent
+      },
+      {
+        path : "service",
+        component : ServiceComponent
       }
     ]
   }

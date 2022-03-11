@@ -17,13 +17,6 @@ const routes: Routes = [
   {
     path : "enquaries",
     component : EnquariesComponent
-<<<<<<< HEAD
-=======
-  },
-  {
-    path : "other",
-    component : OtherComponent
->>>>>>> c0db071ff2bd05026cc50dd61a06185851964c0a
   }
 ];
 

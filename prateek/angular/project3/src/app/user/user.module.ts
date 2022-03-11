@@ -17,6 +17,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { RestoSignupComponent } from './pages/resto-signup/resto-signup.component';
 import { RestoLoginComponent } from './pages/resto-login/resto-login.component';
 import { FileUploadComponent } from './pages/file-upload/file-upload.component';
+import { ServiceComponent } from './pages/service/service.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { FileUploadComponent } from './pages/file-upload/file-upload.component';
     ProfileComponent,
     RestoSignupComponent,
     RestoLoginComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    ServiceComponent
   ],
   imports: [
     CommonModule,
