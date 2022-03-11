@@ -8,11 +8,11 @@
         <div class="profile-desc">
           <div class="profile-pic">
             <div class="count-indicator">
-              <img class="img-xs rounded-circle " src="assets/images/faces/face15.jpg" alt="">
+              <img class="img-xs rounded-circle " src="assets/images/faces/jj.jpeg" alt="">
               <span class="count bg-success"></span>
             </div>
             <div class="profile-name">
-              <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
+              <h5 class="mb-0 font-weight-normal">James Joel</h5>
               <span>Gold Member</span>
             </div>
           </div>
@@ -138,5 +138,24 @@
           <span class="menu-title">Documentation</span>
         </a>
       </li>
+      <!-- <li class="nav-item menu-items">
+        <a class="nav-link">
+          <span class="menu-icon">
+            <i class="mdi mdi-logout text-danger"></i>
+          </span>
+          <span class="menu-title">Logout</span>
+          <ng-template [ngIF]= "_login.isLogged_In()" [ngIfElse]=" notLoggedIn">
+            <a routerLink ="/dashboard" class="nav-item nav-link">Dashboard
+            </a>
+            <a  (click)="_auth.logout()" class="nav-link">Logout
+            </a>
+          </ng-template>
+          <ng-template #notLoggedIn>
+            <a routerLink ="/login"  class=" nav-link">Login
+            </a>   
+          </ng-template>
+
+        </a>
+      </li> -->
     </ul>
   </nav>
