@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { StudentService } from 'src/app/services/student.service';
+
+
+
 @Component({
   selector: 'app-other',
   templateUrl: './other.component.html',
@@ -7,67 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OtherComponent implements OnInit {
 
+  student:any[]=[];
 
-  students=[
-    {
-    name : "Vardan",
-    id : "123",
-    gender : "Male",
-    date : "1 Feb 2022",
-    status : "Approved",
-    class : "success",
-    img : "assets/images/faces/face4.jpg"
-    },
-    { name : "Prateek",
-    id : "456",
-    gender : "Male",
-    date : "1 Feb 2022",
-    status : "Pending",
-    class : "info",
-    img : "assets/images/faces/face4.jpg"
-  },
-    { name : "Mohit",
-    id : "789",
-    gender : "Male",
-    date : "1 Feb 2022",
-    status : "Rejected",
-    class : "danger",
-    img : "assets/images/faces/face4.jpg"
-  },
-    { name : "Kuldeep",
-    id : "1011",
-    gender : "Male",
-    date : "1 Feb 2022",
-    status : "Approved",
-    class : "success",
-    img : "assets/images/faces/face4.jpg"
-  },
-    { name : "Dheraj",
-    id : "1213",
-    gender : "Male",
-    date : "1 Feb 2022",
-    status : "Rejected",
-    class : "danger",
-    img : "assets/images/faces/face4.jpg"
-  },
-    { name : "Rohini",
-    id : "1415",
-    gender : "Male",
-    date : "1 Feb 2022",
-    status : "Rejected",
-    class : "danger",
-    img : "assets/images/faces/face4.jpg"
-  },
-    { name : "Deepti",
-    id : "1617",
-    gender : "Female",
-    date : "1 Feb 2022",
-    status : "Pending",
-    class : "info",
-    img : "assets/images/faces/face4.jpg"
-  }
-]
-  constructor() { }
+
+  // constructor(
+  //   public _stu :StudentService
+
+  // ) 
+  // {
+  //   this._stu.getData().subscribe(data=>{
+  //       this.student= data;
+  //   })
+  //  }
+
+
 
   ngOnInit(): void {
   }
