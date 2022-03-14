@@ -11,18 +11,18 @@ import { StudentService } from 'src/app/services/student.service';
 })
 export class OtherComponent implements OnInit {
 
-  student:any[]=[];
+  allstudent:any[]=[];
 
 
-  // constructor(
-  //   public _stu :StudentService
+  constructor(
+    public _stu :StudentService
 
-  // ) 
-  // {
-  //   this._stu.getData().subscribe(data=>{
-  //       this.student= data;
-  //   })
-  //  }
+  ) 
+  {
+    this._stu.getData().subscribe(data=>{
+        this.allstudent= data;
+    })
+   }
 
 
 

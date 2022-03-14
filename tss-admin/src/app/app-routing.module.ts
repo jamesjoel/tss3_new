@@ -6,6 +6,7 @@ import { EnquariesComponent } from './pages/enquaries/enquaries.component';
 import { JoinedComponent } from './pages/joined/joined.component';
 import { OtherComponent } from './pages/other/other.component';
 import { BackdoorGuard } from './guard/backdoor.guard';
+import { AntiBackdoorGuard } from './guard/anti-backdoor.guard';
 
 const routes: Routes = [
   {
@@ -31,7 +32,8 @@ const routes: Routes = [
   },
   {
     path : "",
-  component : LoginComponent
+  component : LoginComponent,
+  canActivate : [AntiBackdoorGuard]
   }
 ];
 

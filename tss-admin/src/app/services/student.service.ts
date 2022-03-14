@@ -11,9 +11,9 @@ export class StudentService {
     private _http : HttpClient
   ) { }
 
-// getData(){
-//   return this._http.get<any> ("http://localhost:3000/api/admin/student");
-// }
+getData(){
+  return this._http.get<any> ("http://localhost:3000/api/admin/student");
+}
 
 
 
