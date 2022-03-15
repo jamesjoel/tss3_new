@@ -11,10 +11,12 @@ export class HomeComponent implements OnInit {
   constructor(
     private _items : ItemsService
   ) { 
-    this._items.getAll().subscribe(data=>{
-      this.allItems = data;
-      console.log(data);
-    })
+    // this._items.getAll().subscribe(data=>{
+    //   this.allItems = data;
+    //   console.log(data);
+    // })
+
+    console.log(this._items.getAll());
   }
 
   ngOnInit(): void {
