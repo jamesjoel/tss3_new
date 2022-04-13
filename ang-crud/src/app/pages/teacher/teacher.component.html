@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <button data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-info">Add Teacher</button>
+            <h3 class="text-center">Teachers List</h3>
+            
+            <table class="table">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <td>Delete</td>
+                </tr>
+                <tr *ngFor="let t of allTeacher; let n = index">
+                    <td>{{ n+1 }}</td>
+                    <td>{{ t.fullname }}</td>
+                    <td>{{ t.email }}</td>
+                    <td>{{ t.contact }}</td>
+                    
+                    <td><button class="btn btn-sm btn-danger">Delete</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<app-add-teacher (sendData)="sendData($event)"></app-add-teacher>

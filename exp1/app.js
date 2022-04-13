@@ -10,10 +10,15 @@ app.get("/about", (req, res)=>{
     console.log(req.headers);
 })
 
+console.log("One-------------");
+
 app.listen(3000, ()=>{
-    console.log("server running");
-    console.log("welcome");
+    console.log("Two-----------");
+    var a = "rohit";
+    console.log(a);
+    console.log("Three--------");
 });
+
 
 
 
